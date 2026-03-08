@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah Gaugler | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="site-locked">
+    <section id="site-gate" class="site-gate" aria-modal="true" role="dialog" aria-labelledby="site-gate-title">
+      <div class="site-gate__backdrop"></div>
+      <div class="site-gate__panel">
+        <img src="./ASSETS/SKG_BANNER.png" alt="SKG Logo" class="site-gate__logo" />
+        <h1 id="site-gate-title" class="site-gate__title">Private Portfolio</h1>
+        <p class="site-gate__copy">Enter the password to view this site.</p>
+        <form id="site-gate-form" class="site-gate__form">
+          <label class="site-gate__label" for="site-gate-password">Password</label>
+          <input
+            id="site-gate-password"
+            class="site-gate__input"
+            type="password"
+            name="password"
+            autocomplete="current-password"
+            required
+          />
+          <p id="site-gate-error" class="site-gate__error" aria-live="polite"></p>
+          <button class="site-gate__button" type="submit">Enter</button>
+        </form>
+      </div>
+    </section>
+
+    <header class="top-nav" id="top-nav">
+      <div class="top-nav__inner">
+        <a href="#home" class="top-nav__logo-link" aria-label="Back to top">
+          <img src="./ASSETS/SKG_BANNER.png" alt="SKG Logo" class="top-nav__logo" />
+        </a>
+        <button
+          id="menu-toggle"
+          class="top-nav__menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Toggle navigation"
+        >
+          Menu
+        </button>
+        <nav id="site-nav" class="top-nav__links" aria-label="Primary">
+          <a href="#interactive">Interactive</a>
+          <a href="#emails">Emails</a>
+          <a href="#type-layout">Type &amp; Layout</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <img src="./ASSETS/SKG_BANNER.png" alt="SKG Logo" class="hero__logo" />
+        <h1 class="hero__title">Sarah Gaugler</h1>
+        <nav class="hero__links" aria-label="Section quick links">
+          <a href="#interactive">Interactive Design</a>
+          <a href="#emails">Email Design</a>
+          <a href="#type-layout">Typesetting &amp; Layout Design</a>
+          <span class="hero__divider" aria-hidden="true"></span>
+          <a href="#about">More About Me</a>
+        </nav>
+      </section>
+
+      <section id="interactive" class="portfolio-section">
+        <div class="content-shell">
+          <h2 class="section-title">Interactive Design</h2>
+          <div id="interactive-grid" class="project-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="emails" class="portfolio-section">
+        <div class="content-shell">
+          <h2 class="section-title">Email Design</h2>
+          <div id="emails-grid" class="project-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="type-layout" class="portfolio-section">
+        <div class="content-shell">
+          <h2 class="section-title">Typesetting &amp; Layout Design</h2>
+          <div id="layout-grid" class="project-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="content-shell">
+          <h2 class="section-title">More About Me</h2>
+          <div class="about-layout">
+            <div class="about-copy">
+              <p>
+                I'm Sarah, a graphic designer with over a decade of experience that began in 2014 when I
+                launched my own freelance graphic design business while in high school.
+              </p>
+              <p>
+                I started my professional career on an in-house marketing team, advancing from student worker
+                to leading an entire team of graphic designers. I was responsible for ensuring brand
+                consistency across all materials and guiding my team to produce cohesive, high-quality work.
+              </p>
+              <p>
+                For the past four years at a small design agency, I progressed from graphic designer to
+                Technical Design Lead - a role I proposed and helped define after recognizing the need for
+                deeper technical specialization. I now lead our most technical projects (responsive HTML
+                emails, interactive landing pages, complex document layouts), push forward advancements in our
+                interactive and web-based design capabilities, and research AI tools to strengthen team
+                workflows and creative output.
+              </p>
+              <p>
+                I'm detail-oriented to a fault - a trait that drives precision but has also taught me, through
+                years of team collaboration and stakeholder feedback, how to balance rigor with flexibility.
+                What motivates me most is combining strong visual craft with technical execution to deliver
+                engaging, functional experiences.
+              </p>
+              <p>
+                My interest in the technical side of design accelerated dramatically with the rise of
+                AI-assisted coding. Having learned basic HTML &amp; CSS years earlier, I suddenly found I
+                could prototype, build, and iterate on almost anything with AI support - no longer limited to
+                "just" design. I see this as a major turning point for graphic design as a discipline, and
+                I'm genuinely excited to keep leveraging these tools to push boundaries and create more
+                ambitious, interactive work.
+              </p>
+              <p>
+                I'm eager to bring that blend of experience, leadership, and forward-looking technical
+                curiosity to the next project.
+              </p>
+            </div>
+
+            <aside class="about-side">
+              <img
+                class="about-image"
+                src="./ASSETS/SKG_HEADSHOT_2026.png"
+                alt="Portrait of Sarah Gaugler"
+              />
+              <div class="about-buttons">
+                <a class="button button--disabled" aria-disabled="true">Resume</a>
+                <a class="button button--disabled" aria-disabled="true">LinkedIn</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <section id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="project-modal__backdrop" data-close-modal="true"></div>
+      <div class="project-modal__panel">
+        <button class="icon-button project-modal__close" type="button" id="modal-close" aria-label="Close dialog">
+          &#10005;
+        </button>
+        <div class="project-modal__controls">
+          <button class="icon-button" id="modal-prev" type="button" aria-label="Previous project">&#8249;</button>
+          <button class="icon-button" id="modal-next" type="button" aria-label="Next project">&#8250;</button>
+        </div>
+        <div class="project-modal__media-wrap">
+          <img id="modal-image" class="project-modal__media" src="" alt="" />
+        </div>
+        <div class="project-modal__copy">
+          <h3 id="modal-title" class="project-modal__title"></h3>
+          <p id="modal-kicker" class="project-modal__kicker"></p>
+          <div id="modal-body" class="project-modal__body"></div>
+        </div>
+        <div id="modal-secondary-media" class="project-modal__secondary-media" aria-label="Additional project images"></div>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
