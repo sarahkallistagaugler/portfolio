@@ -133,19 +133,12 @@ const portfolioData = {
   ],
 };
 
-const SITE_GATE_PASSWORD = "fyhcod-5Bybsa-wyrvam";
-const SITE_GATE_STORAGE_KEY = "skg-portfolio-access";
-
 const gridMap = {
   interactive: document.querySelector("#interactive-grid"),
   emails: document.querySelector("#emails-grid"),
   layout: document.querySelector("#layout-grid"),
 };
 
-const siteGateEl = document.querySelector("#site-gate");
-const siteGateFormEl = document.querySelector("#site-gate-form");
-const siteGatePasswordEl = document.querySelector("#site-gate-password");
-const siteGateErrorEl = document.querySelector("#site-gate-error");
 const modalEl = document.querySelector("#project-modal");
 const modalImageEl = document.querySelector("#modal-image");
 const modalKickerEl = document.querySelector("#modal-kicker");
@@ -165,41 +158,6 @@ const modalState = {
   projectIndex: 0,
   isSwitching: false,
 };
-
-function unlockSite(remember = true) {
-  if (remember) {
-    localStorage.setItem(SITE_GATE_STORAGE_KEY, "granted");
-  }
-
-  document.body.classList.remove("site-locked");
-  document.body.classList.add("site-unlocked");
-  siteGateEl.classList.add("is-hidden");
-}
-
-function setupSiteGate() {
-  if (!siteGateEl || !siteGateFormEl || !siteGatePasswordEl || !siteGateErrorEl) return;
-
-  if (localStorage.getItem(SITE_GATE_STORAGE_KEY) === "granted") {
-    unlockSite(false);
-    return;
-  }
-
-  siteGatePasswordEl.focus();
-
-  siteGateFormEl.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const submittedPassword = siteGatePasswordEl.value;
-
-    if (submittedPassword === SITE_GATE_PASSWORD) {
-      siteGateErrorEl.textContent = "";
-      unlockSite();
-      return;
-    }
-
-    siteGateErrorEl.textContent = "Incorrect password.";
-    siteGatePasswordEl.select();
-  });
-}
 
 function renderCards() {
   Object.entries(gridMap).forEach(([section, container]) => {
@@ -392,7 +350,6 @@ function triggerIntroAnimation() {
 }
 
 renderCards();
-setupSiteGate();
 setupProjectEvents();
 setupScrollNav();
 setupMenuToggle();
