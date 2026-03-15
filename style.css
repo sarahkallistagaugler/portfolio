@@ -128,6 +128,7 @@ a {
   border: 1px solid rgba(122, 53, 239, 0.5);
   background: rgba(87, 20, 208, 0.18);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  display: none;
 }
 
 .top-nav__return:hover,
@@ -554,15 +555,15 @@ body.is-ready .hero__scroll {
 .project-modal__controls {
   position: absolute;
   top: 8px;
-  right: 58px;
+  left: 18px;
   display: flex;
   gap: 0.3rem;
 }
 
 .project-modal__controls .icon-button {
-  min-width: 2.6rem;
-  min-height: 2.6rem;
-  font-size: 2.1rem;
+  min-width: 2.8rem;
+  min-height: 2.8rem;
+  font-size: 2.3rem;
   line-height: 1;
 }
 
@@ -579,8 +580,12 @@ body.is-ready .hero__scroll {
 
 .project-modal__close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 18px;
+  min-width: 2.6rem;
+  min-height: 2.6rem;
+  font-size: 2.1rem;
+  line-height: 1;
   z-index: 2;
 }
 
@@ -667,6 +672,49 @@ body.is-ready .hero__scroll {
   object-fit: cover;
 }
 
+.project-modal__scroll-hint {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  transform: translateY(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+}
+
+.project-modal__scroll-hint::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.project-modal__scroll-hint.is-visible {
+  opacity: 0.9;
+  animation: modalScrollPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes modalScrollPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -684,6 +732,11 @@ body.modal-open {
 
   .top-nav__links {
     display: none;
+  }
+
+  .top-nav__return {
+    display: inline-flex;
+    align-items: center;
   }
 
   .section-title {
@@ -710,7 +763,7 @@ body.modal-open {
 
   .project-modal__controls {
     top: 14px;
-    right: 64px;
+    left: 16px;
   }
 
   .project-modal__close {
@@ -724,6 +777,10 @@ body.modal-open {
 
   .project-modal__secondary-image {
     max-height: none;
+  }
+
+  .project-modal__scroll-hint {
+    display: none;
   }
 }
 

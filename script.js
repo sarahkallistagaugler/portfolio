@@ -149,6 +149,8 @@ const modalKickerEl = document.querySelector("#modal-kicker");
 const modalTitleEl = document.querySelector("#modal-title");
 const modalBodyEl = document.querySelector("#modal-body");
 const modalSecondaryMediaEl = document.querySelector("#modal-secondary-media");
+const modalPanelEl = document.querySelector(".project-modal__panel");
+const modalScrollHintEl = document.querySelector(".project-modal__scroll-hint");
 const modalPrevEl = document.querySelector("#modal-prev");
 const modalNextEl = document.querySelector("#modal-next");
 const modalCloseEl = document.querySelector("#modal-close");
@@ -222,6 +224,8 @@ function renderModal() {
       `
     )
     .join("");
+
+  requestAnimationFrame(updateScrollHint);
 }
 
 function openModal(section, projectIndex) {
@@ -236,8 +240,38 @@ function openModal(section, projectIndex) {
 function closeModal() {
   modalEl.classList.remove("is-open");
   document.body.classList.remove("modal-open");
+  if (modalScrollHintEl) {
+    modalScrollHintEl.classList.remove("is-visible");
+  }
 }
 
+function updateScrollHint() {
+  if (!modalScrollHintEl || !modalPanelEl || !modalImageEl) return;
+  if (!modalEl.classList.contains("is-open")) return;
+  if (window.innerWidth <= 900) {
+    modalScrollHintEl.classList.remove("is-visible");
+    return;
+  }
+
+  const project = portfolioData[modalState.section]?.[modalState.projectIndex];
+  const eligibleTitles = new Set([
+    "OS&E Interactive Catalog",
+    "Survey Results Presentation",
+    "Investor Report Template",
+    "Folded Trail Map",
+  ]);
+  const isEligibleProject = project && eligibleTitles.has(project.title);
+  const panelHeight = modalPanelEl.clientHeight;
+  const imageHeight = modalImageEl.getBoundingClientRect().height;
+  const tallImage = imageHeight >= panelHeight - 120;
+  const scrolled = modalPanelEl.scrollTop > 40;
+
+  if (isEligibleProject && tallImage && !scrolled) {
+    modalScrollHintEl.classList.add("is-visible");
+  } else {
+    modalScrollHintEl.classList.remove("is-visible");
+  }
+}
 function animateProjectSwap(delta, updateCallback) {
   const targets = [modalImageEl, modalSecondaryMediaEl, modalTitleEl, modalKickerEl, modalBodyEl];
   const direction = delta >= 0 ? 1 : -1;
@@ -354,3 +388,10 @@ renderCards();
 setupProjectEvents();
 setupScrollNav();
 triggerIntroAnimation();
+
+if (modalPanelEl) {
+  modalPanelEl.addEventListener("scroll", updateScrollHint, { passive: true });
+}
+
+window.addEventListener("resize", updateScrollHint);
+modalImageEl.addEventListener("load", updateScrollHint);
