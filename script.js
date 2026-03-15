@@ -2,15 +2,19 @@ const portfolioData = {
   interactive: [
     {
       title: "Branding & Interface Design",
-      kicker: "SONGSWEEPER",
+      kicker: "SONG SWEEPER",
       media: [
         "./ASSETS/INTERACTIVE_SONGSWEEPER_1.png",
         "./ASSETS/INTERACTIVE_SONGSWEEPER_2.png",
         "./ASSETS/INTERACTIVE_SONGSWEEPER_3.png",
       ],
+      link: {
+        href: "https://apps.apple.com/us/app/song-sweeper-library-cleaner/id6749875190",
+        label: "View in App Store",
+      },
       paragraphs: [
-        "SongSweeper is an application designed to enhance Apple Music libraries by eliminating duplicate songs, incomplete albums, and unfavored tracks. I collaborated with the developer on the branding, logo, and interface design.",
-        "For the logo, I drew inspiration from the enchanted brooms featured in the Sorcerer's Apprentice segment of the animated film Fantasia. This was complemented by a musical note flag, resulting in a dynamic, whimsical, and distinctive design. I employed a color palette with primary colors to evoke the hues seen in Mickey Mouse's apprentice attire and the yellow brooms. The interface designs were the culmination of this process, harmonizing the elements that defined the brand with the essential functionality that would provide users with an optimal experience. Additionally, I had the opportunity to refine the interactive app icon design using Apple's Icon Composer.",
+        "Song Sweeper is an application designed to enhance Apple Music libraries by eliminating duplicate songs, incomplete albums, and unfavored tracks. I collaborated with the developer on the branding, logo, and interface design.",
+        "For the logo, I drew inspiration from the enchanted brooms featured in the Sorcerer's Apprentice segment of the animated film Fantasia. This was complemented by a musical note flag, resulting in a dynamic, whimsical, and distinctive design. I employed a color palette with primary colors to evoke the hues seen in Mickey Mouse's apprentice attire and the yellow brooms. The interface designs were the culmination of this process, harmonizing the elements that defined the brand with the essential functionality that would provide users with an optimal experience. I also got to learn about and implement Apple's Liquid Glass design elements into the interface, and I worked in Apple's Icon Composer to refine the layered app icon design across different view settings, like dark mode and custom tinted views.",
       ],
     },
     {
@@ -19,7 +23,7 @@ const portfolioData = {
       media: ["./ASSETS/INTERACTIVE_TAYMOUTH_1.png", "./ASSETS/INTERACTIVE_TAYMOUTH_2.png"],
       paragraphs: [
         "For this project, the client initially requested a PDF brochure primarily intended for mobile viewing. The brochure would be extensive, presenting over a dozen golf experiences available in the vicinity of the Taymouth Castle community. Instead of a static PDF, I proposed a custom landing page that would be responsive and accessible.",
-        "Utilizing an AI-powered IDE, I was able to generate an entirely custom HTML webpage from scratch. The resulting design is functional, aesthetically pleasing, and aligns with the Taymouth Castle brand. I was particularly proud of the outcome not only for its visual appeal but also for demonstrating the capabilities of an AI-powered IDE in the hands of a designer.",
+        "Using Cursor, an AI-powered IDE, I was able to generate an entirely custom HTML webpage from scratch. The resulting design is functional, aesthetically pleasing, and aligns with the Taymouth Castle brand. I was particularly proud of the outcome not only for its visual appeal but also for demonstrating the capabilities of an AI-powered IDE in the hands of a designer.",
       ],
     },
     {
@@ -37,7 +41,7 @@ const portfolioData = {
       media: ["./ASSETS/INTERACTIVE_SILO_1.png", "./ASSETS/INTERACTIVE_SILO_2.png"],
       paragraphs: [
         "Silo Ridge, a family-oriented residential community, offers a comprehensive range of programs designed to engage families in enriching activities. Among these programs is their community garden, which aims to provide a customized experience tailored to the preferences of each participating family. To achieve this, Silo Ridge required the creation of an in-depth web form that would enable members to select the crops they wish to cultivate.",
-        "Utilizing Oracle's Eloqua, I designed a landing page that exudes a rustic and charming aesthetic while maintaining a clean and elegant appearance, thereby aligning with Silo Ridge's brand identity. For the form itself, the client requested the inclusion of several conditional options, which could only be implemented through custom scripts. I utilized an AI agent to generate code that would seamlessly integrate into the Eloqua form.",
+        "Utilizing Oracle's Eloqua, I designed a landing page that exudes a rustic and charming aesthetic while maintaining a clean and elegant appearance, thereby aligning with Silo Ridge's brand identity. For the form itself, the client requested the inclusion of several conditional options, which could only be implemented through custom scripts. I used Cursor to generate code that would seamlessly integrate into the Eloqua form.",
       ],
     },
   ],
@@ -48,7 +52,7 @@ const portfolioData = {
       media: ["./ASSETS/EMAIL_COVE_1.png", "./ASSETS/EMAIL_COVE_2.png"],
       paragraphs: [
         "Residential clubs want their first point of contact with prospects to shine. They need to be eye-catching, engaging, and dialed in with the brand. For this project, it was my job to take the reins to showcase Cove Club in a quick, effective email campaign.",
-        "We started with a static mockup to get the design approved by the client, and then moved onto development. With the help of an AI-powered IDE, I was able to generate an entirely custom HTML email based on the design mockup I created. The end result was a beautiful, responsive email that would catch the attention of prospects and inform them about the enticing real estate opportunities at Cove Club.",
+        "We started with a static mockup to get the design approved by the client, and then moved onto development. With the help of Cursor, an AI-powered IDE, I was able to generate an entirely custom HTML email based on the design mockup I created. The end result was a beautiful, responsive email that would catch the attention of prospects and inform them about the enticing real estate opportunities at Cove Club.",
       ],
     },
     {
@@ -58,24 +62,6 @@ const portfolioData = {
       paragraphs: [
         "Upon joining a club, new members may find it challenging to comprehend the necessary details for navigating their membership within the community. Our objective with this project was to create an aesthetically pleasing and informative email that exudes friendliness while conveying essential information.",
         "This email incorporates numerous graphical elements that must be responsive on both mobile and desktop devices. Utilizing Oracle's Eloqua email builder, I successfully achieved this responsiveness while ensuring that the client receives a final deliverable that can be edited in the future as they utilize it in their campaigns.",
-      ],
-    },
-    {
-      title: "Prospect Introduction",
-      kicker: "TERRITORY 1889 GOLF & LAKE CLUB - FLATHEAD LAKE, MONTANA",
-      media: ["./ASSETS/EMAIL_TERRITORY_1.png", "./ASSETS/EMAIL_TERRITORY_2.png"],
-      paragraphs: [
-        "Territory 1889's brand embodies a harmonious blend of rustic charm and opulent luxury. In crafting this introductory email to prospective buyers, I endeavored to convey this essence while adhering to the constraints of Oracle's Eloqua email builder.",
-        "Territory 1889's photography speaks for itself, necessitating its prominent placement within the layout. To achieve a rugged aesthetic without compromising responsiveness in my email design, I incorporated paper-textured background images that are subtle enough to not detract from the captivating photography. The torn edges and rough lines further enhance the rustic ambiance, distinguishing Territory 1889 as a distinctive residential experience.",
-      ],
-    },
-    {
-      title: "Golf Tournament Invite",
-      kicker: "ZAPOTAL GOLF & BEACH CLUB - GUANACASTE, COSTA RICA",
-      media: ["./ASSETS/EMAIL_ZAPOTAL_1.png", "./ASSETS/EMAIL_ZAPOTAL_2.png"],
-      paragraphs: [
-        "Zapotal Golf & Beach Club is hosting their first golf tournament, and they wanted this email invitation to feel particularly special. This email needed to feel at home among the suite of event collateral that my team had worked on.",
-        "Without sacrificing responsiveness across devices, I pulled in the vibrant watercolor illustrations that catch the viewers eye right at the top. I continued the colorful theme into the schedule below, and finished the last section with a callback to the foliage. This project was a really interesting balance between highlighting the event creative while also making a functional, responsive email that would both engage and inform its viewers.",
       ],
     },
     {
@@ -94,6 +80,24 @@ const portfolioData = {
       paragraphs: [
         "The initial interaction with potential clients must be captivating and welcoming. As a relatively new residential club, Mohala faced the challenge of establishing a strong first impression. However, with a location like Honolulu and a distinctive brand identity, I had ample opportunities to create a memorable introduction.",
         "For this design, I prioritized the photography as the focal point, ensuring that the graphical brand elements complemented rather than detracted from the overall composition. Additionally, I had to navigate the constraints of Oracle's Eloqua builder, which pushed me to get extra creative with this layout.",
+      ],
+    },
+    {
+      title: "Golf Tournament Invite",
+      kicker: "ZAPOTAL GOLF & BEACH CLUB - GUANACASTE, COSTA RICA",
+      media: ["./ASSETS/EMAIL_ZAPOTAL_1.png", "./ASSETS/EMAIL_ZAPOTAL_2.png"],
+      paragraphs: [
+        "Zapotal Golf & Beach Club is hosting their first golf tournament, and they wanted this email invitation to feel particularly special. This email needed to feel at home among the suite of event collateral that my team had worked on.",
+        "Without sacrificing responsiveness across devices, I pulled in the vibrant watercolor illustrations that catch the viewers eye right at the top. I continued the colorful theme into the schedule below, and finished the last section with a callback to the foliage. This project was a really interesting balance between highlighting the event creative while also making a functional, responsive email that would both engage and inform its viewers.",
+      ],
+    },
+    {
+      title: "Prospect Introduction",
+      kicker: "TERRITORY 1889 GOLF & LAKE CLUB - FLATHEAD LAKE, MONTANA",
+      media: ["./ASSETS/EMAIL_TERRITORY_1.png", "./ASSETS/EMAIL_TERRITORY_2.png"],
+      paragraphs: [
+        "Territory 1889's brand embodies a harmonious blend of rustic charm and opulent luxury. In crafting this introductory email to prospective buyers, I endeavored to convey this essence while adhering to the constraints of Oracle's Eloqua email builder.",
+        "Territory 1889's photography speaks for itself, necessitating its prominent placement within the layout. To achieve a rugged aesthetic without compromising responsiveness in my email design, I incorporated paper-textured background images that are subtle enough to not detract from the captivating photography. The torn edges and rough lines further enhance the rustic ambiance, distinguishing Territory 1889 as a distinctive residential experience.",
       ],
     },
   ],
@@ -174,6 +178,10 @@ function renderCards() {
             data-index="${index}"
             aria-label="Open project: ${project.title}"
           >
+            <div class="project-card__label">
+              <p class="project-card__label-title">${project.title}</p>
+              <p class="project-card__label-kicker">${project.kicker}</p>
+            </div>
             <img class="project-card__media" src="${project.media[0]}" alt="${project.title} preview image" loading="lazy" />
           </article>
         `
@@ -191,6 +199,16 @@ function renderModal() {
   modalTitleEl.textContent = project.title;
   modalKickerEl.textContent = project.kicker;
   modalBodyEl.innerHTML = project.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
+
+  if (project.link) {
+    modalBodyEl.innerHTML += `
+      <p>
+        <a class="project-modal__link" href="${project.link.href}" target="_blank" rel="noreferrer">
+          ${project.link.label}
+        </a>
+      </p>
+    `;
+  }
 
   modalSecondaryMediaEl.innerHTML = secondaryMedia
     .map(

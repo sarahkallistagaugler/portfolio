@@ -28,7 +28,8 @@ body {
   background:
     radial-gradient(1200px 600px at 50% -20%, #2e0e68 0%, transparent 60%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-deeper) 100%);
-  line-height: 1.45;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
 }
 
 img {
@@ -189,6 +190,46 @@ a {
   background: var(--accent);
 }
 
+.hero__scroll {
+  margin-top: 1.2rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.hero__scroll:hover,
+.hero__scroll:focus-visible {
+  color: #ffffff;
+}
+
+.hero__scroll-icon {
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  animation: heroScrollPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes heroScrollPulse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(6px) rotate(45deg);
+    opacity: 1;
+  }
+}
+
 .hero__logo,
 .hero__title,
 .hero__links > * {
@@ -264,6 +305,17 @@ body.is-ready .hero__links a:focus-visible {
   transform: translateY(-2px) scale(1.05);
 }
 
+body.is-ready .hero__scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease 0.7s, transform 0.4s ease 0.7s;
+}
+
+.hero__scroll {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
 .portfolio-section {
   padding: 7rem 0 3.25rem;
 }
@@ -295,6 +347,39 @@ body.is-ready .hero__links a:focus-visible {
   will-change: transform;
 }
 
+.project-card__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  color: #efe9f7;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 2, 18, 0) 0%, rgba(8, 2, 18, 0.65) 100%);
+  transition: opacity 0.25s ease;
+}
+
+.project-card__label-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(6, 2, 14, 0.85);
+}
+
+.project-card__label-kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(239, 233, 247, 0.78);
+  text-shadow: 0 2px 8px rgba(6, 2, 14, 0.85);
+}
+
 .project-card::after {
   content: "";
   position: absolute;
@@ -303,6 +388,7 @@ body.is-ready .hero__links a:focus-visible {
   opacity: 1;
   transition: opacity 0.42s ease;
   pointer-events: none;
+  z-index: 1;
 }
 
 .project-card:hover,
@@ -372,15 +458,16 @@ body.is-ready .hero__links a:focus-visible {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-height: 2.55rem;
+  min-height: 2.6rem;
+  padding: 0 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 700;
-  border: 0;
+  font-weight: 600;
+  border: 1px solid rgba(122, 53, 239, 0.6);
   color: #ffffff;
-  background: var(--accent);
+  background: rgba(87, 20, 208, 0.25);
   text-decoration: none;
-  transition: transform 0.28s ease, background-color 0.28s ease, box-shadow 0.28s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button--disabled {
@@ -390,9 +477,9 @@ body.is-ready .hero__links a:focus-visible {
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-2px);
-  background: var(--accent-bright);
-  box-shadow: 0 12px 22px rgba(53, 10, 118, 0.35);
+  transform: translateY(-1px);
+  background: rgba(87, 20, 208, 0.45);
+  box-shadow: 0 10px 18px rgba(53, 10, 118, 0.35);
 }
 
 .contact-section {
@@ -528,6 +615,29 @@ body.is-ready .hero__links a:focus-visible {
   margin: 0 0 1rem;
 }
 
+.project-modal__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0 1.2rem;
+  border: 1px solid rgba(122, 53, 239, 0.6);
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  background: rgba(87, 20, 208, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-modal__link:hover,
+.project-modal__link:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(87, 20, 208, 0.45);
+  box-shadow: 0 10px 18px rgba(53, 10, 118, 0.35);
+}
+
 .project-modal__secondary-media {
   margin-top: 30px;
   display: grid;
@@ -636,6 +746,12 @@ body.modal-open {
   .hero__links > * {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .hero__scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 
 }
