@@ -21,6 +21,10 @@ const portfolioData = {
       title: "Wonder Days Landing Page",
       kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
       media: ["./ASSETS/INTERACTIVE_TAYMOUTH_1.png", "./ASSETS/INTERACTIVE_TAYMOUTH_2.png"],
+      link: {
+        href: "./ASSETS/TAY2429_WONDER_DAYS_012726.html",
+        label: "View Live Preview",
+      },
       paragraphs: [
         "For this project, the client initially requested a PDF brochure primarily intended for mobile viewing. The brochure would be extensive, presenting over a dozen golf experiences available in the vicinity of the Taymouth Castle community. Instead of a static PDF, I proposed a custom landing page that would be responsive and accessible.",
         "Using Cursor, an AI-powered IDE, I was able to generate an entirely custom HTML webpage from scratch. The resulting design is functional, aesthetically pleasing, and aligns with the Taymouth Castle brand. I was particularly proud of the outcome not only for its visual appeal but also for demonstrating the capabilities of an AI-powered IDE in the hands of a designer.",

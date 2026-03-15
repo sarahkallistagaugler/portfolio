@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonder Days Designs - Golf Experiences</title>
+    
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/vui7npm.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #102845;
+            --primary-gold: #CBA777;
+            --light-blue: #ECF1F4;
+            --cream: #FBF8F3;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+        }
+
+        body {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'begum', serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-family: 'begum', serif;
+            font-weight: 300;
+            color: var(--primary-navy);
+            font-size: 1.5rem;
+            line-height: 150%;
+            position: relative;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--cream) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B75bb7f64-e047-4c51-ae78-fce4eb6d088b%7D_hero_watercolor.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: soft-light;
+            padding-top: 6rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(16, 40, 69, 0.05);
+        }
+
+        .taymouth-logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 2rem;
+            margin-top: 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'begum', serif;
+            font-style: italic;
+            font-weight: 200;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--primary-navy);
+            margin-bottom: 3rem;
+            margin-top: -1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.1s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.3s forwards;
+            text-align: center;
+            width: 100px;
+            margin-left: -50px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .scroll-arrow {
+            width: 2px;
+            height: 30px;
+            background: var(--primary-navy);
+            margin: 0 auto 10px;
+            animation: bounce 2s infinite;
+            position: relative;
+        }
+
+        .scroll-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid var(--primary-navy);
+        }
+
+        .scroll-indicator p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--primary-navy);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(16, 40, 69, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--primary-navy);
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(203, 167, 119, 0.1);
+            color: var(--primary-gold);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header p {
+            padding: 10px 80px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .static-map {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(16, 40, 69, 0.1);
+        }
+
+        .static-map img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Map Section Layout */
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        /* Map Legend */
+        .map-legend {
+            padding: 0;
+        }
+
+        .legend-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            background: var(--white);
+            border: 1px solid var(--light-blue);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .legend-item:hover {
+            background: var(--light-blue);
+            border-color: var(--primary-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 40, 69, 0.1);
+        }
+
+        .legend-number {
+            width: 22px;
+            height: 22px;
+            background: var(--primary-navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.7rem;
+            margin-right: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .legend-item:hover .legend-number {
+            background: var(--primary-gold);
+        }
+
+        .legend-name {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Experience Detail */
+        .experience-detail {
+            padding: 5rem 2rem;
+            background: var(--light-blue);
+        }
+
+        .experience-card {
+            background: var(--white);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(16, 40, 69, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .experience-hero {
+            height: 400px;
+            background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bd95766f3-6681-4350-b721-87f5e8ba016e%7D_st-andrews.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .experience-hero::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .experience-title {
+            font-size: 4rem;
+            color: var(--white);
+            z-index: 2;
+        }
+
+        .experience-location {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            z-index: 2;
+        }
+
+        .experience-subtitle {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-top: 13px;
+            z-index: 2;
+        }
+
+        .experience-content {
+            padding: 3rem;
+        }
+
+        .experience-stats-container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            align-items: start;
+        }
+
+        .experience-map {
+            width: 100%;
+            height: auto;
+        }
+
+        .experience-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-right: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--cream);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--primary-gold);
+        }
+
+        .experience-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .experience-description p {
+            margin-bottom: 1rem;
+        }
+
+        .experience-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 769px) {
+            .experience-description p,
+            .experience-content h3 {
+                padding-right: 6rem;
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-navy);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(203, 167, 119, 0.3);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 40, 69, 0.1);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-content {
+                justify-content: space-between;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-navy);
+                flex-direction: column;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.mobile-open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+            }
+
+            .nav-dropdown {
+                position: static;
+            }
+
+            .dropdown-content {
+                display: none !important;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+                background-image: url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bf6a00983-7e9a-4f49-9b05-0892509e3bee%7D_hero_watercolor_optimized.png');
+            }
+            
+            .hero-description {
+                padding: 0 1.5rem;
+            }
+            
+            .map-section {
+                padding: 3rem 1rem;
+            }
+            
+            .experience-detail {
+                padding: 1.5rem 1rem;
+            }
+            
+            .map-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .static-map {
+                margin: 0;
+                order: -1;
+            }
+            
+            .map-legend {
+                padding: 0;
+            }
+            
+            .legend-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .experience-stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .experience-stats {
+                gap: 1rem;
+                padding-right: 0;
+                padding-left: 0;
+                padding: 0rem;
+            }
+            
+            .section-header p {
+                padding: 10px 15px;
+                text-align: left;
+            }
+            
+            .experience-hero {
+                padding: 0 40px;
+            }
+            
+            .experience-title {
+                font-size: clamp(2rem, 10vw, 4rem);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button,
+            .cta-button-secondary {
+                width: 100%;
+                text-align: center;
+                font-size: clamp(0.7rem, 3.5vw, 1rem);
+                white-space: nowrap;
+            }
+
+            /* Read more collapse/expand */
+            .experience-text-wrapper {
+                position: relative;
+                max-height: 220px;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+            }
+
+            .experience-text-wrapper::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 80px;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+
+            .experience-text-wrapper.expanded {
+                max-height: 2000px;
+            }
+
+            .experience-text-wrapper.expanded::after {
+                opacity: 0;
+            }
+
+            .read-more-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                background: none;
+                border: none;
+                color: var(--primary-gold);
+                font-family: 'sweet-sans-pro', sans-serif;
+                font-weight: 600;
+                font-size: clamp(0.7rem, 3.5vw, 1rem);
+                cursor: pointer;
+                padding: 0.75rem 0;
+                margin-bottom: 1.5rem;
+                width: 100%;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .read-more-arrow {
+                display: inline-block;
+                transition: transform 0.3s ease;
+                font-size: 0.7rem;
+            }
+
+            .read-more-toggle.expanded .read-more-arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* Hide read-more toggle on desktop */
+        @media (min-width: 769px) {
+            .read-more-toggle {
+                display: none;
+            }
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: var(--primary-navy);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1001;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navigation">
+        <div class="nav-content">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li class="nav-dropdown">
+                    <a href="#experiences">Experiences</a>
+                    <div class="dropdown-content">
+                        <a href="#experience-1">Taymouth Castle</a>
+                        <a href="#experience-2">The One</a>
+                        <a href="#experience-3">The Hogan</a>
+                        <a href="#experience-4">The Lothian</a>
+                        <a href="#experience-5">The Granite</a>
+                        <a href="#experience-6">The Highlander</a>
+                        <a href="#experience-7">The Northern Lights</a>
+                        <a href="#experience-8">The Island Hopper</a>
+                        <a href="#experience-9">Skye High</a>
+                        <a href="#experience-10">The Full Western</a>
+                        <a href="#experience-11">Walking on Ayre</a>
+                        <a href="#experience-12">The Londoner</a>
+                        <a href="#experience-13">The Kent Coast</a>
+                        <a href="#experience-14">The Royal Circuit</a>
+                        <a href="#experience-15">The Tralee Tour</a>
+                        <a href="#experience-16">The North Westerner</a>
+                        <a href="#experience-17">The Causeway Coast</a>
+                        <a href="#experience-18">The Dubliner</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img class="taymouth-logo" src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Be4e39d3e-f00c-4ebb-a0f3-8a69964248ba%7D_TAY_DIGITAL_GRADIENT.png" alt="Taymouth Castle Golf and Sport Club">
+        
+        <h1 class="hero-title">Wonder Days</h1>
+        <div class="hero-subtitle">Designs</div>
+        
+        <p class="hero-description">
+            Traveling around Scotland and Great Britain offers a diverse range of experiences, 
+            from exploring bustling cities to soaking in serene countryside, and of course 
+            playing golf at some of the best venues in the world.
+        </p>
+        
+        <a href="#experiences" class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <p>Explore</p>
+        </a>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section" id="experiences">
+        <div class="container">
+            <div class="section-header">
+                <h2>Discover</h2>
+                <h1 class="section-title">Golf Experiences</h1>
+                <p>Explore Scotland to discover breathtaking landscapes, where the Highlands' rugged beauty contrasts with the vibrant city life in Edinburgh and Glasgow. Historic castles such as Stirling Castle and the Sinclair Ruins offer a glimpse into the country's rich past, while the serene beauty of Cairngorms National Park invites outdoor adventurers.</p>
+                
+                <p>In London, visitors can enjoy iconic landmarks like Big Ben and the British Museum or immerse themselves in world-class theatre in the West End. Down in the south, the picturesque villages of the Cotswolds and the stunning coastline of Cornwall provide a slower pace and a chance to unwind.</p>
+                
+                <p>Traveling in Ireland offers the chance to explore the rugged beauty of the Cliffs of Moher and the stunning landscapes of the Wild Atlantic Way, perfect for scenic drives and coastal hikes. In Dublin, visitors can enjoy the lively atmosphere of Temple Bar, tour the historic Trinity College, and see the famous Book of Kells. For a more rural experience, the Ring of Kerry provides picturesque countryside views, charming villages, and ancient castles, offering a glimpse into Ireland's rich heritage.</p>
+                
+                <p>Each region of Great Britain has its own unique culture, history, and charm, offering something for every type of traveller. This guide will help you design a trip of a lifetime, whether just for a day or a whole week. Each "package" serves as a rough template that can be adjusted and tailor-made to your preferences. Enjoy!</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-legend">
+                    <div class="legend-grid">
+                        <a href="#experience-1" class="legend-item">
+                            <div class="legend-number">1</div>
+                            <div class="legend-name">Taymouth Castle</div>
+                        </a>
+                        <a href="#experience-2" class="legend-item">
+                            <div class="legend-number">2</div>
+                            <div class="legend-name">The One</div>
+                        </a>
+                        <a href="#experience-3" class="legend-item">
+                            <div class="legend-number">3</div>
+                            <div class="legend-name">The Hogan</div>
+                        </a>
+                        <a href="#experience-4" class="legend-item">
+                            <div class="legend-number">4</div>
+                            <div class="legend-name">The Lothian</div>
+                        </a>
+                        <a href="#experience-5" class="legend-item">
+                            <div class="legend-number">5</div>
+                            <div class="legend-name">The Granite</div>
+                        </a>
+                        <a href="#experience-6" class="legend-item">
+                            <div class="legend-number">6</div>
+                            <div class="legend-name">The Highlander</div>
+                        </a>
+                        <a href="#experience-7" class="legend-item">
+                            <div class="legend-number">7</div>
+                            <div class="legend-name">The Northern Lights</div>
+                        </a>
+                        <a href="#experience-8" class="legend-item">
+                            <div class="legend-number">8</div>
+                            <div class="legend-name">The Island Hopper</div>
+                        </a>
+                        <a href="#experience-9" class="legend-item">
+                            <div class="legend-number">9</div>
+                            <div class="legend-name">Skye High</div>
+                        </a>
+                        <a href="#experience-10" class="legend-item">
+                            <div class="legend-number">10</div>
+                            <div class="legend-name">The Full Western</div>
+                        </a>
+                        <a href="#experience-11" class="legend-item">
+                            <div class="legend-number">11</div>
+                            <div class="legend-name">Walking on Ayre</div>
+                        </a>
+                        <a href="#experience-12" class="legend-item">
+                            <div class="legend-number">12</div>
+                            <div class="legend-name">The Londoner</div>
+                        </a>
+                        <a href="#experience-13" class="legend-item">
+                            <div class="legend-number">13</div>
+                            <div class="legend-name">The Kent Coast</div>
+                        </a>
+                        <a href="#experience-14" class="legend-item">
+                            <div class="legend-number">14</div>
+                            <div class="legend-name">The Royal Circuit</div>
+                        </a>
+                        <a href="#experience-15" class="legend-item">
+                            <div class="legend-number">15</div>
+                            <div class="legend-name">The Tralee Tour</div>
+                        </a>
+                        <a href="#experience-16" class="legend-item">
+                            <div class="legend-number">16</div>
+                            <div class="legend-name">The North Westerner</div>
+                        </a>
+                        <a href="#experience-17" class="legend-item">
+                            <div class="legend-number">17</div>
+                            <div class="legend-name">The Causeway Coast</div>
+                        </a>
+                        <a href="#experience-18" class="legend-item">
+                            <div class="legend-number">18</div>
+                            <div class="legend-name">The Dubliner</div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="static-map" id="map">
+                    <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B34aa4f59-ad76-41d9-b78e-437dddf28d61%7D_WONDER_DAYS_FULL_MAP_UPDATED.jpg" alt="Wonder Days Golf Experiences Map - UK & Ireland" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Experience -->
+    <section class="experience-detail" id="experience-1">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B037128f6-aabc-4ec0-a733-9c03f709f168%7D_18_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Kenmore</div>
+                        <h1 class="experience-title">Taymouth Castle</h1>
+                        <div class="experience-subtitle">Golf & Sport Club</div>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-text-wrapper" id="experience-text-1">
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elit metus, vestibulum nec turpis non, iaculis pharetra urna.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elit metus, vestibulum nec turpis non, iaculis pharetra urna. Pellentesque ac vehicula nulla, eu pellentesque elit. Suspendisse tempor sem eu accumsan ullamcorper. Morbi ac rutrum nibh. Suspendisse congue dui nisl, vitae tincidunt ligula vehicula quis. Donec sit amet nisl nibh. Sed nec lobortis est. Suspendisse aliquet id sapien nec rutrum. Nulla sed eros tincidunt, mollis diam sed, sodales est. Nulla venenatis ultricies erat quis imperdiet.</p>
+                            
+                            <p>Nunc rutrum felis tempor dolor mollis sollicitudin. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nec egestas mi. Mauris vel viverra velit. Mauris porta massa quis nisi fermentum, a dictum quam ultricies. Nullam ut varius orci. Nulla varius ut tortor at dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-1">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 2 -->
+    <section class="experience-detail" id="experience-2">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero">
+                    <div>
+                        <div class="experience-location">St Andrews</div>
+                        <h1 class="experience-title">The One</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B9254475a-03bf-44e3-a4fa-f3e3c92def10%7D_WONDER_DAYS_MAP1.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">75 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">1 hr, 45 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">20 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-2">
+                        <h3>A golfer's experience in St Andrews, often considered the "Home of Golf," is nothing short of iconic.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Walking the hallowed fairways of the Old Course, where the game has been played for over 600 years, is a dream for many. The Old Course's Swilcan Bridge and Hell Bunker are steeped in history, offering both challenge and nostalgia. Beyond the course, the town of St Andrews provides a rich golfing atmosphere, with its historical charm, golf museums, and welcoming pubs where stories of rounds played are shared. For many, teeing off at St Andrews is not just a round of golf, but a pilgrimage to the sport's spiritual home.</p>
+                            
+                            <p>Kingsbarns offers some of the best views in all Scottish golf. Although the course has only existed for 25 years, the maturity, complexity, and condition of the layout make for an unforgettable experience. Players will be welcomed by generous fairways, however, must face treacherous sloping greens that can be defended by demanding pin positions.</p>
+                            
+                            <p>Dumbarnie is even younger than Kingsbarns yet has already proved itself as a significant championship venue, hosting the Women's Scottish Open. Its condition and layout are both similarly impeccable to Kingsbarns, and players will be amazed by the amount of land the course covers just inland from the Fife coastline. Accessible for both day trips and longer stays. Lodging options include The Rusacks Hotel and The Old Course Hotel.</p>
+
+                            <p>Accessible for both day trips and longer stays. Lodging options include The Rusacks Hotel and The Old Course Hotel.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-2">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 3 -->
+    <section class="experience-detail" id="experience-3">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B38d7983f-d5f0-4994-9f85-cf89442e0a21%7D_02_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Carnoustie</div>
+                        <h1 class="experience-title">The Hogan</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B8a64727d-6899-43c6-855d-c33e2f1dab3e%7D_WONDER_DAYS_MAP2.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">70 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">1 hr, 45 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">20 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-4">
+                        <h3>A golfer's journey through Carnoustie, Panmure, and Monifieth offers a rich and varied experience along Scotland's renowned Angus coast.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Carnoustie, known as one of the most challenging courses in the world, tests even the best golfers with its deep bunkers, unpredictable winds, and an infamous stretch of finishing holes.</p>
+                            
+                            <p>Just a short distance away, Panmure Golf Club offers a more traditional and intimate experience, combining classic links play with rich history, including a personal touch from Ben Hogan, who practiced there before his 1953 Open win.</p>
+                            
+                            <p>Monifieth, with its fast-running fairways and coastal breezes, provides a more relaxed but equally testing round, blending scenic beauty with strategic challenges. Together, these courses offer a diverse golfing experience rooted in history, skill, and the rugged charm of Scottish links golf.</p>
+                            
+                            <p>Accessible for both day trips and longer stays. Lodging options include The Carnoustie Golf Hotel as well as other hotels in Dundee.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-4">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 4 -->
+    <section class="experience-detail" id="experience-4">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Ba4c543d0-65f8-4e7e-a183-eebe13676cb7%7D_03_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Muirfield & Edinburgh</div>
+                        <h1 class="experience-title">The Lothian</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B93443ad1-f8f8-4bd2-9312-38f1cc136875%7D_WONDER_DAYS_MAP3.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">105 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">2 hr, 10 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">35 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-4">
+                        <h3>A golfer's experience at Muirfield, Gullane, and North Berwick offers a thrilling journey through some of Scotland's most revered links courses.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Starting at Muirfield, home to The Honourable Company of Edinburgh Golfers, players encounter a meticulously designed course known for its strategic layout and rich history, having hosted multiple Open Championships.</p>
+                            
+                            <p>Nearby Gullane Golf Club, with its three courses, delivers stunning views of the Firth of Forth, challenging golfers with undulating fairways and natural hazards that require precision and skill.</p>
+                            
+                            <p>At North Berwick, one of Scotland's oldest courses, golfers experience true links-style play with quirky, historic features like the famous Redan hole, demanding creative shot-making and a deep respect for the terrain. Together, these three courses provide a perfect blend of tradition, challenge, and breathtaking coastal scenery, offering an unforgettable golfing adventure along Scotland's East Lothian coastline.</p>
+                            
+                            <p>Accessible for both day trips and longer stays. Lodging options include The Greywalls Hotel as well as other hotels in Edinburgh. Other playing options include The Renaissance Club and Archerfield Links. Tantallon Castle is a spectacular medieval castle that is well worth a visit!</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-4">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 5 -->
+    <section class="experience-detail" id="experience-5">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B89a5a3c1-0feb-4528-afb0-2643b7dbb270%7D_04_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Aberdeen</div>
+                        <h1 class="experience-title">The Granite</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bc06f9f07-cda2-40cc-bba0-42381a3fc4f5%7D_WONDER_DAYS_MAP4.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">110 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">2 hr, 20 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">30 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-5">
+                        <h3>A golfer's journey through Royal Aberdeen, Trump International, and Cruden Bay in Scotland offers a trio of unforgettable links golf experiences.</h3>
+                        
+                        <div class="experience-description">
+                            <p>At Royal Aberdeen, the golfer is greeted by one of the finest front nines in the world, with dramatic dunes and the challenging winds of the North Sea shaping every shot.</p>
+                            
+                            <p>Trump International, set against a backdrop of towering sand dunes, combines modern design with the raw beauty of the coastline, providing a course that is both visually stunning and strategically demanding.</p>
+                            
+                            <p>Cruden Bay, meanwhile, offers a more whimsical experience with its natural layout, sweeping views, and quirky holes that embrace the wild character of traditional Scottish links golf. Together, these three courses provide a dynamic and thrilling tour of some of Scotland's most storied and dramatic golfing landscapes.</p>
+                            
+                            <p>Accessible for both day trips and longer stays. Lodging options include staying at Trump International as well as other hotels in Aberdeen. The ruins of Slains Castle are also worth a visit.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-5">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 6 -->
+    <section class="experience-detail" id="experience-6">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B1cfc4b7f-c6f8-49a3-91fe-af9dd6197bdf%7D_05_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Nairn & Inverness</div>
+                        <h1 class="experience-title">The Highlander</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B7dcb53f0-e1de-4a49-8484-4c69b10d7cf9%7D_WONDER_DAYS_MAP5.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">85 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">2 hr</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">35 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-6">
+                        <h3>Playing at Nairn and Castle Stuart offers golfers a true taste of Scotland's dramatic links courses.</h3>
+                        
+                        <div class="experience-description">
+                            <p>At Nairn, the challenging winds off the Moray Firth and its fast, undulating greens provide a test of skill, while the scenic views of the coastline make every hole a visual delight. Castle Stuart, with its stunning clifftop setting, combines modern design with a traditional links feel, featuring wide fairways that encourage strategic play amidst sweeping Highland vistas. Both courses are renowned for their impeccable conditions, with natural landscapes that blend seamlessly into the golfing experience. Together, they offer a memorable golfing journey.</p>
+                            
+                            <p>A visit to Boat of Garten, nestled in the heart of the Cairngorms National Park, offers tourists a peaceful retreat surrounded by stunning Scottish scenery. Known as the "Osprey Village," it's a prime spot for birdwatching, with the chance to see ospreys and other wildlife along the River Spey. A short drive away, Grantown-on-Spey offers a charming, traditional Highland town experience with its Victorian architecture, local shops, and cozy cafés. Outdoor enthusiasts will love the nearby Speyside Way, perfect for walking or cycling through the picturesque Scottish countryside. Both villages also provide easy access to world-famous whisky distilleries along the Speyside Whisky Trail, where visitors can sample some of Scotland's finest malts.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-6">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 7 -->
+    <section class="experience-detail" id="experience-7">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B651b5f4a-9c08-4990-823e-1f0aebfab2ec%7D_06_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Royal Dornoch</div>
+                        <h1 class="experience-title">The Northern Lights</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B1ba3ac78-94ed-4183-93d9-330b2d1785e1%7D_WONDER_DAYS_MAP6.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">135 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">3 hr</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">45 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-7">
+                        <h3>A golfer's journey through Royal Dornoch, Brora, and Skibo Castle offers a unique blend of history, natural beauty, and challenging play in the Scottish Highlands.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Royal Dornoch, consistently ranked among the best courses in the world, provides an unforgettable experience with its sweeping views of the Dornoch Firth and its renowned championship links that test every facet of a golfer's game.</p>
+                            
+                            <p>Just a short drive away, Brora Golf Club offers a more secluded but equally stunning experience, with wild landscapes and sheep grazing the fairways, adding a charmingly rustic feel to the round.</p>
+                            
+                            <p>At Skibo Castle, golfers can enjoy the exclusive Carnegie Links, which combines luxury with nature's raw beauty, set against the backdrop of a grand castle and pristine Scottish landscapes. Together, these courses deliver a truly memorable Highland golfing adventure, blending world-class play with the region's tranquil, timeless appeal. With "The Northern Lights" being a challenging daytrip, Skibo Castle provides high-quality lodging. If you time your trip right, you may just experience the Northern Lights on a clear night.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-7">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 8 -->
+    <section class="experience-detail" id="experience-8">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bf3f06dc7-b69a-4974-8293-4c2337db1530%7D_07_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Lewis & Harris Islands</div>
+                        <h1 class="experience-title">The Island Hopper</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B8d920d65-6622-483b-8524-e684f87fc49f%7D_WONDER_DAYS_MAP7.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">240 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">N/A</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">1 hr, 15 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-8">
+                        <h3>A tourist's experience on the Lewis and Harris islands, part of the Outer Hebrides in Scotland, is one of rugged beauty and cultural immersion.</h3>
+                        
+                        <div class="experience-description">
+                            <p>On Lewis, visitors can explore ancient sites like the mysterious Callanish Standing Stones, which predate Stonehenge, and learn about the islands' rich Gaelic heritage. The island's coastline is dotted with dramatic cliffs and pristine beaches, like Luskentyre, where white sands meet crystal-clear waters, perfect for peaceful walks.</p>
+                            
+                            <p>Harris offers a mix of breathtaking mountain landscapes and remote coastal roads, ideal for scenic drives and photography. The islands are also known for their Harris Tweed, and tourists can visit local weavers to see this world-famous fabric being crafted by hand. The unique blend of natural beauty, history, and island life makes a visit to Lewis and Harris truly unforgettable.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-8">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 9 -->
+    <section class="experience-detail" id="experience-9">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B3d61a703-724c-4b08-a0a1-8ef1a4f8173e%7D_08_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Isle of Skye</div>
+                        <h1 class="experience-title">Skye High</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B8aa91ea3-29ee-4ba5-95d2-ace9c105f73f%7D_WONDER_DAYS_MAP8.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">230 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">N/A</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">1 hr, 10 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-9">
+                        <h3>The Isle of Skye provides a journey into some of Scotland's most dramatic and awe-inspiring landscapes.</h3>
+                        
+                        <div class="experience-description">
+                            <p>The island's rugged terrain is a paradise for nature lovers, with highlights like the towering Old Man of Storr, the otherworldly Quiraing landslips, and the Fairy Pools, where crystal-clear waters cascade through the hills. Exploring the island's winding roads reveals charming villages like Portree, with its colourful waterfront, and ancient castles such as Dunvegan Castle. The Isle of Skye also offers opportunities for wildlife spotting, from seals and otters to majestic sea eagles. Whether hiking, sightseeing, or simply soaking in the breathtaking views, Skye provides an unforgettable blend of wild beauty and Scottish heritage.</p>
+                            
+                            <p>With the Isle of Skye being very remote, most towns such as Portree and Dunvegan offer a range of food and lodging options.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-9">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 10 -->
+    <section class="experience-detail" id="experience-10">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B819d0eaf-08d1-462e-9596-00b3cb836cd3%7D_09_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Machrihanish, Isle of Jura & Islay</div>
+                        <h1 class="experience-title">The Full Western</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B1e78d30d-611c-489d-9fe3-f171dc147cb4%7D_WONDER_DAYS_MAP9.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">145 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">4 hr, 30 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">40 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-10">
+                        <h3>Ardfin, The Machrie, and both Machrihanish courses (Old and Dunes) offer a unique blend of stunning landscapes and challenging, remote courses on Scotland's western coast.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Ardfin, located on the rugged Isle of Jura, provides a dramatic setting with breathtaking views over the Atlantic, where the course's design seamlessly integrates with the natural surroundings, testing both skill and strategy.</p>
+                            
+                            <p>The Machrie, on the Isle of Islay, is a links course that combines history with modern design, offering wide, undulating fairways and constantly changing weather conditions that challenge golfers at every turn.</p>
+                            
+                            <p>Meanwhile, Machrihanish, renowned for its famous first tee shot across the Atlantic Ocean (Old), presents a classic Scottish links experience on the Mull of Kintyre, where the natural dunes and seaside winds create an unforgettable round. Each of these courses provides a remote yet captivating experience for golfers seeking a mix of beauty, tradition, and challenge. The Ugadale Hotel is a tourist favourite in Machrihanish, and Islay and Jura both have lodging options. Ardfin has a 5-star hotel.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-10">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 11 -->
+    <section class="experience-detail" id="experience-11">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B17d0cd76-ceb3-4003-b5d1-aaf82d22ee8f%7D_10_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Royal Troon & Turnberry</div>
+                        <h1 class="experience-title">Walking on Ayr</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bec3f2743-ded7-45dc-b495-b856fb63a56f%7D_WONDER_DAYS_MAP10.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">105 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">2 hr, 15 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">35 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-11">
+                        <h3>A golfer's journey through Prestwick, Royal Troon, Western Gailes, and Dundonald Links offers a true taste of Scotland's finest links courses.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Prestwick, the birthplace of The Open Championship, presents an intriguing challenge with its quirky design and historic charm, where every hole tells a story. At Royal Troon, players test their skills on one of the toughest finishing stretches in golf, not to mention the "Postage Stamp", a short but tricky par-3. Western Gailes combines beautiful seaside views with undulating fairways and unpredictable winds, providing a classic Scottish links experience. Dundonald Links, the youngest of the group, delivers modern design mixed with traditional elements, offering championship-calibre conditions and a layout that tests golfers of all abilities. Like Dumbarnie, Dundonald has also recently hosted a Women's Scottish Open. Together, these courses create a golfer's paradise on Scotland's Ayrshire coast, blending history, challenge, and stunning scenery.</p>
+                            
+                            <p>At Turnberry, the Ailsa Course, with its dramatic coastal views and challenging design, offers a round that tests both skill and focus. Signature holes like the 9th, where golfers tee off toward the picturesque Turnberry Lighthouse, are unforgettable moments set against the backdrop of the Atlantic. Off the course, Turnberry's luxury resort provides top-notch amenities, including lodging, fine dining, and spa services, making the entire experience both relaxing and exhilarating. Alternative lodging options are also available closer to Troon.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-11">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 12 -->
+    <section class="experience-detail" id="experience-12">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bf0c7ab57-c351-4c73-8eed-f9a42a2d9a5c%7D_11_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Surrey, London</div>
+                        <h1 class="experience-title">The Londoner</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bbe454f88-c5a6-4ff5-b4bd-02a66fd6412a%7D_WONDER_DAYS_MAP11.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">450 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">6 hr</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">2 hr, 30 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-12">
+                        <h3>In London, one can explore world-famous landmarks such as the Tower of London, Buckingham Palace, and the Houses of Parliament, all rich in history and grandeur.</h3>
+                        
+                        <div class="experience-description">
+                            <p>One can stroll along the South Bank of the River Thames, enjoying stunning views of the city and visiting attractions like the London Eye and Tate Modern. With its vibrant markets, diverse food scene, and endless shopping opportunities in places like Oxford Street and Covent Garden, London offers a dynamic and unforgettable city experience.</p>
+                            
+                            <p>A golfer's experience at Sunningdale is defined by its beautifully manicured heathland courses and tranquil surroundings. Both the Old and New Courses offer a challenging but fair test of skill, with rolling fairways, heather-lined rough, and fast greens set against the backdrop of stunning natural scenery. The rich history of the club, combined with the welcoming clubhouse atmosphere, makes a round at Sunningdale a memorable experience for any golfer – Sunningdale is the epitome of heathland golf in England. Other heathland courses in Surrey are similarly unforgettable, such as Walton Heath (Old & New), St George's Hill, Wentworth, and Hankley Common. There is no shortage of 5-star lodging options in London, from the Ritz in Mayfair to The Savoy.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-12">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 13 -->
+    <section class="experience-detail" id="experience-13">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bad7d359f-f109-43e0-a613-c8952e191e09%7D_12_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Sandwich & Deal</div>
+                        <h1 class="experience-title">The Kent Coast</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B431e659b-71d5-4715-8f07-fa4a016e8503%7D_WONDER_DAYS_MAP12.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">500 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">8 hr</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">3 hr, 15 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-13">
+                        <h3>A golfer's experience at Royal St George's, Royal Cinque Ports, Prince's, and Rye offers a thrilling journey through some of the UK's most storied links courses.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Royal St George's, with its undulating fairways and deep bunkers, provides a formidable test of skill and has hosted The Open Championship multiple times, making it a bucket-list course for many. Just nearby, Royal Cinque Ports offers similarly challenging terrain, with its unpredictable winds and demanding layout, while also boasting a rich championship history. Prince's, which shares the same dramatic coastline, provides 27 holes of classic links golf, known for its diversity in hole design and beautiful seaside views. Rye, though less known to some, is a hidden gem with a tight and strategic layout, where precision is key. Together, these courses deliver a quintessential links golf experience, combining history, challenge, and stunning coastal scenery. Lodging options in Sandwich, Deal, and Rye. One of the most underrated links golf experiences in the world.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-13">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 14 -->
+    <section class="experience-detail" id="experience-14">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B9224746d-3aa8-4cbc-a8e5-cfd611c7eda1%7D_13_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Liverpool & Southport</div>
+                        <h1 class="experience-title">The Royal Circuit</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B3bbf78d1-1d5a-4b65-bb82-487b352422e0%7D_WONDER_DAYS_MAP13.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">270 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">5 hr, 30 min</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">1 hr, 30 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-14">
+                        <h3>A golfer's experience at Royal Liverpool, Royal Lytham & St Annes, and Royal Birkdale is a tour through some of England's most prestigious and challenging links courses.</h3>
+                        
+                        <div class="experience-description">
+                            <p>At Royal Liverpool, the sweeping views of the Dee Estuary and the storied history of hosting Open Championships provide a thrilling backdrop, where golfers face strategic bunkers and unpredictable coastal winds.</p>
+                            
+                            <p>Royal Lytham, known for its deep pot bunkers and thick rough, tests even the most skilled players, while its iconic red brick clubhouse adds a touch of timeless elegance.</p>
+                            
+                            <p>At Royal Birkdale, considered one of the finest links in the world, the towering sand dunes and narrow fairways demand precision, offering a true test of a golfer's abilities. Together, these courses provide a rich, authentic links golf experience, steeped in history and set against stunning coastal landscapes.</p>
+                            
+                            <p>Not many golfers can boast playing three Open venues in three days! Other stunning courses on this stretch of coast include Hillside, Formby, and Southport & Ainsdale. High quality lodging options are available in Liverpool and Southport, such as the Blackburne Terrace and the Hilton Doubletree.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-14">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 15 -->
+    <section class="experience-detail" id="experience-15">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B2c4cad6f-f9ea-4b47-acec-f6adf41134e8%7D_14_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Southwest Ireland</div>
+                        <h1 class="experience-title">The Tralee Tour</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B57b247f1-a684-4e3c-b7fc-342e1255e443%7D_WONDER_DAYS_MAP14.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">400 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">N/A</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">3 hr</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-15">
+                        <h3>Ireland's famed courses such as Tralee, Old Head, Doonbeg, and Ballybunion are an unforgettable experience filled with breathtaking scenery and challenging play.</h3>
+                        
+                        <div class="experience-description">
+                            <p>At Tralee, designed by Arnold Palmer, golfers enjoy dramatic seaside views and rugged terrain, with the back nine often praised for its spectacular beauty. Old Head, perched on a towering peninsula with sweeping views of the Atlantic, offers one of the most visually stunning rounds in the world, where each hole seems to flirt with the ocean's edge. Doonbeg provides a blend of luxury and challenge, with its windswept dunes and expertly designed links layout ensuring a memorable test for any golfer. Finally, Ballybunion, one of Ireland's most revered courses, is famous for its wild dunes, deep bunkers, and unpredictable coastal winds, creating a true links experience that leaves golfers both humbled and inspired by the raw beauty of the Irish coast. Other courses worth a visit include Lahinch and Old Head.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-15">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 16 -->
+    <section class="experience-detail" id="experience-16">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7Bd21c99d3-8215-44cc-879b-62274bb3d963%7D_15_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Rosapenna</div>
+                        <h1 class="experience-title">The North Westerner</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B7f88b037-6c7d-490e-942c-5fba5f7b9e7c%7D_WONDER_DAYS_MAP15.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">180 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">N/A</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">1 hr</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-16">
+                        <h3>Rosapenna, located along the stunning coastline of County Donegal in Ireland, is a destination of pure beauty and challenge.</h3>
+                        
+                        <div class="experience-description">
+                            <p>Known for its natural links courses, Rosapenna offers three world-class layouts: the Old Tom Morris Links, Sandy Hills Links, and the newer St Patrick's Links, designed by Tom Doak. Playing amidst the rolling dunes and dramatic seaside views, golfers are treated to a perfect blend of history and modern design. The constantly changing wind adds a level of difficulty, making each round unique. Off the course, the welcoming atmosphere at the Rosapenna Golf Resort, with its luxurious accommodations and rich golfing tradition, completes the experience, offering a perfect balance of relaxation and competition.</p>
+                            
+                            <p>Roughly thirty minutes away, Ballyliffin is also defined by its breathtaking coastal views and challenging links courses, including the renowned Glashedy and Old Courses. Surrounded by rugged landscapes and the Atlantic Ocean, players face unique tests from the natural elements, making it both a beautiful and demanding golf destination. Narin & Portnoo Links is another hidden gem worth a visit!</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-16">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 17 -->
+    <section class="experience-detail" id="experience-17">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B8bf0996e-4a45-497e-8f15-aa79e7902363%7D_16_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Royal Portrush & Royal County Down</div>
+                        <h1 class="experience-title">The Causeway Coast</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B4dce6339-3334-4953-a409-13a41e8369d6%7D_WONDER_DAYS_MAP16.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">170 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">N/A</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">1 hr</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-17">
+                        <h3>Royal Portrush, Portstewart, and Royal County Down exemplify a trio of world-class links courses that showcase the best of Northern Ireland's golfing landscape.</h3>
+                        
+                        <div class="experience-description">
+                            <p>At Royal Portrush, an Open venue, golfers are challenged by the undulating fairways of the famous Dunluce Links, with stunning views of the North Atlantic and the distant Skerries.</p>
+                            
+                            <p>Portstewart provides a thrilling experience with its Strand Course, starting with one of the most visually striking opening holes in golf, set against towering dunes and coastal scenery.</p>
+                            
+                            <p>Royal County Down, often ranked among the best courses in the world, offers a truly majestic experience, with its blind shots, rugged beauty, and the iconic backdrop of the Mourne Mountains. Each course delivers its own blend of history, natural beauty, and golfing challenge, making the journey across these courses unforgettable for any golfer. High-quality lodging available in both Portrush and Belfast.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-17">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 18 -->
+    <section class="experience-detail" id="experience-18">
+        <div class="container">
+            <div class="experience-card">
+                <div class="experience-hero" style="background: linear-gradient(rgba(16, 40, 69, 0.4), rgba(16, 40, 69, 0.4)), url('https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B124daca1-e5d0-42fc-b009-de520df13989%7D_17_hero.jpg'); background-size: cover; background-position: center;">
+                    <div>
+                        <div class="experience-location">Dublin</div>
+                        <h1 class="experience-title">The Dubliner</h1>
+                    </div>
+                </div>
+                
+                <div class="experience-content">
+                    <div class="experience-stats-container">
+                        <div class="experience-map-wrapper">
+                            <img src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B6da266cd-9e14-4dfe-8d02-4f6687091190%7D_WONDER_DAYS_MAP17.png" alt="St Andrews Area Detail Map" class="experience-map">
+                        </div>
+                        <div class="experience-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Travel Distance</div>
+                                <div class="stat-value">300 miles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Car</div>
+                                <div class="stat-value">N/A</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Time via Helicopter</div>
+                                <div class="stat-value">1 hr, 45 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-text-wrapper" id="experience-text-18">
+                        <h3>Portmarnock, The European Club, and The Island offer a captivating journey through some of Ireland's most stunning links courses.</h3>
+                        
+                        <div class="experience-description">
+                            <p>At Portmarnock, players are treated to a challenging layout that hugs the coastline, with sweeping views of the Irish Sea and the legendary backdrop of the Velvet Strand. The European Club stands out for its rugged beauty and strategic design, with deep bunkers and fast greens that test even the most seasoned golfers.</p>
+                            
+                            <p>Finally, The Island, nestled between the sea and the estuary, combines breathtaking natural scenery with a uniquely challenging course layout, featuring dramatic cliffs and unpredictable winds. Each of these courses not only provides a thrilling golfing challenge but also immerses players in the rich golfing heritage and stunning landscapes that define Ireland's coastal links. County Louth is also an exceptional links course on the Dublin coastline.</p>
+                            
+                            <p>Dublin portrays a vibrant blend of rich history and lively culture, as one strolls through the cobblestone streets of Temple Bar, enjoying the lively pubs and street performances. Visiting landmarks like the stunning St Patrick's Cathedral and the historic Trinity College, home to the ancient Book of Kells, offer a fascinating glimpse into Ireland's past while immersing them in the city's warm and welcoming atmosphere. High-quality lodging available in Dublin.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="read-more-toggle" data-target="experience-text-18">
+                        <span class="read-more-text">Read more</span>
+                        <span class="read-more-arrow">▼</span>
+                    </button>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">Plan This Experience</a>
+                        <a href="#map" class="cta-button-secondary">Return to Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navigation');
+            if (window.scrollY > 100) {
+                nav.classList.add('visible');
+            } else {
+                nav.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navDropdown = document.querySelector('.nav-dropdown');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Handle mobile dropdown toggle
+        navDropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                navDropdown.classList.toggle('mobile-dropdown-open');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-content')) {
+                navLinks.classList.remove('mobile-open');
+                navDropdown.classList.remove('mobile-dropdown-open');
+            }
+        });
+
+        // Close mobile menu when window is resized to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('mobile-open');
+                navDropdown.classList.remove('mobile-dropdown-open');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking a link
+                    navLinks.classList.remove('mobile-open');
+                    navDropdown.classList.remove('mobile-dropdown-open');
+                }
+            });
+        });
+
+        // Read more toggle functionality
+        document.querySelectorAll('.read-more-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const textWrapper = document.getElementById(targetId);
+                const textSpan = this.querySelector('.read-more-text');
+                
+                if (textWrapper.classList.contains('expanded')) {
+                    textWrapper.classList.remove('expanded');
+                    this.classList.remove('expanded');
+                    textSpan.textContent = 'Read more';
+                } else {
+                    textWrapper.classList.add('expanded');
+                    this.classList.add('expanded');
+                    textSpan.textContent = 'Read less';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
