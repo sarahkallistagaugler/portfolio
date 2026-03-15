@@ -154,8 +154,6 @@ const modalNextEl = document.querySelector("#modal-next");
 const modalCloseEl = document.querySelector("#modal-close");
 const topNavEl = document.querySelector("#top-nav");
 const heroEl = document.querySelector("#home");
-const menuToggleEl = document.querySelector("#menu-toggle");
-const siteNavEl = document.querySelector("#site-nav");
 
 const modalState = {
   section: null,
@@ -345,21 +343,6 @@ function setupScrollNav() {
   observer.observe(heroEl);
 }
 
-function setupMenuToggle() {
-  if (!menuToggleEl || !siteNavEl) return;
-
-  menuToggleEl.addEventListener("click", () => {
-    const isOpen = siteNavEl.classList.toggle("is-open");
-    menuToggleEl.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  siteNavEl.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNavEl.classList.remove("is-open");
-      menuToggleEl.setAttribute("aria-expanded", "false");
-    });
-  });
-}
 
 function triggerIntroAnimation() {
   requestAnimationFrame(() => {
@@ -370,5 +353,4 @@ function triggerIntroAnimation() {
 renderCards();
 setupProjectEvents();
 setupScrollNav();
-setupMenuToggle();
 triggerIntroAnimation();
