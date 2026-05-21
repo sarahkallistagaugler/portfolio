@@ -394,7 +394,7 @@ body.is-ready .hero__scroll {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(24, 10, 44, 0.72);
+  background: rgba(24, 10, 44, 0.36);
   opacity: 1;
   transition: opacity 0.42s ease;
   pointer-events: none;

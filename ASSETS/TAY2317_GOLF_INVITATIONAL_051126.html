@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inaugural Golf Tournament — Taymouth Castle Golf &amp; Sport Club</title>
+    <link rel="stylesheet" href="https://use.typekit.net/vui7npm.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #102845;
+            --primary-gold: #CBA777;
+            --light-blue: #ECF1F4;
+            --cream: #FBF8F3;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --hero-shadow: 0 18px 40px rgba(6, 16, 31, 0.24);
+            --hero-text-shadow: 0 3px 6px rgba(6, 16, 31, 0.86), 0 12px 25px rgba(6, 16, 31, 0.52);
+            --hero-text-shadow-strong: 0 4px 8px rgba(6, 16, 31, 0.9), 0 16px 32px rgba(6, 16, 31, 0.62);
+        }
+
+        body {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+            background: #0D1A2A;
+        }
+
+        /* ----- Invitation hero ----- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            overflow: hidden;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at top, rgba(245, 247, 249, 0.08), rgba(13, 26, 42, 0) 46%),
+                linear-gradient(180deg, rgba(7, 16, 28, 0.2) 0%, rgba(7, 16, 28, 0.46) 100%),
+                #0D1A2A;
+        }
+
+        .hero__video-shell {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #0D1A2A;
+        }
+
+        .hero__video-frame {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: max(177.78vh, 100vw);
+            height: max(56.25vw, 100vh);
+            border: 0;
+            transform: translateX(-50%) scale(1.08);
+            transform-origin: top center;
+            filter: saturate(0.72) brightness(0.72) contrast(0.88);
+        }
+
+        .hero__screen {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(145deg, rgba(251, 248, 243, 0.34) 0%, rgba(236, 241, 244, 0.18) 36%, rgba(16, 40, 69, 0.2) 100%),
+                rgba(10, 24, 40, 0.28);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        .hero__veil {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at center, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 48%),
+                linear-gradient(180deg, rgba(6, 16, 31, 0.16) 0%, rgba(6, 16, 31, 0.42) 55%, rgba(6, 16, 31, 0.68) 100%);
+            pointer-events: none;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 50.4rem;
+            width: 100%;
+            color: rgba(255, 255, 255, 0.94);
+            padding: clamp(2.25rem, 6vw, 4rem) 0 clamp(2.5rem, 7vw, 4.5rem);
+        }
+
+        .crest {
+            width: clamp(165px, 33vw, 248px);
+            height: auto;
+            margin: 0 auto 1.25rem;
+            display: block;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.35s forwards;
+            filter:
+                drop-shadow(0 3px 6px rgba(6, 16, 31, 0.82))
+                drop-shadow(0 14px 28px rgba(6, 16, 31, 0.56));
+        }
+
+        /*
+         * TITLE LOCKUP — swap when the final lockup art is ready:
+         *
+         * 1) Hide the placeholder heading (add class is-hidden or remove it).
+         * 2) Uncomment the <img> below (inside .title-lockup) and set src, e.g.:
+         *    src="lockup-tee-off.png"
+         *    Keep the file in CONCEPT_B/ (or CONCEPT_B/assets/) so concepts stay isolated.
+         *
+         * Optional: add .title-lockup__img { max-width: min(92vw, 520px); height: auto; } if needed.
+         */
+        .title-lockup {
+            margin-bottom: 0.75rem;
+        }
+
+        .title-lockup__placeholder {
+            font-family: 'begum', serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: var(--white);
+            font-size: clamp(2.35rem, 7.5vw, 4.25rem);
+            line-height: 1.05;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.55s forwards;
+            text-shadow: var(--hero-text-shadow-strong);
+        }
+
+        .title-lockup__word {
+            display: inline-block;
+        }
+
+        .title-lockup__word--at {
+            letter-spacing: -0.035em;
+        }
+
+        .title-lockup__word--taymouth {
+            letter-spacing: -0.045em;
+        }
+
+        .title-lockup__placeholder::after {
+            content: '';
+            display: block;
+            width: 4.5rem;
+            height: 3px;
+            margin: 1rem auto 0;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            box-shadow: 0 0 18px rgba(203, 167, 119, 0.18);
+        }
+
+        .title-lockup__img {
+            display: none;
+            max-width: min(92vw, 540px);
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .event-date {
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-weight: 700;
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.75s forwards;
+            text-shadow: var(--hero-text-shadow);
+        }
+
+        .invite-body {
+            font-size: 1.0625rem;
+            line-height: 1.78;
+            max-width: 43.2rem;
+            margin: 0 auto 1.15rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.95s forwards;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: var(--hero-text-shadow);
+        }
+
+        .invite-note {
+            max-width: 38.4rem;
+            margin: 0 auto 2rem;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.92);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.05s forwards;
+            text-shadow: var(--hero-text-shadow);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.25rem;
+            background: rgba(255, 255, 255, 0.14);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.8125rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.15s forwards;
+            box-shadow: var(--hero-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .cta-button:hover {
+            background: rgba(203, 167, 119, 0.82);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(203, 167, 119, 0.32);
+            border-color: rgba(203, 167, 119, 0.88);
+        }
+
+        .cta-button:focus-visible {
+            outline: 2px solid var(--primary-gold);
+            outline-offset: 4px;
+        }
+
+        .scroll-cue {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: max-content;
+            gap: 0.35rem;
+            margin: calc(1.35rem + 30px) auto 0;
+            color: rgba(255, 255, 255, 0.88);
+            font-family: 'sweet-sans-pro', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.35s forwards;
+            text-shadow: var(--hero-text-shadow);
+        }
+
+        .scroll-cue__arrow {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-right: 1px solid var(--primary-gold);
+            border-bottom: 1px solid var(--primary-gold);
+            transform: rotate(45deg);
+            animation: floatCue 1.8s ease-in-out infinite;
+        }
+
+        .scroll-cue:focus-visible {
+            outline: 2px solid var(--primary-gold);
+            outline-offset: 6px;
+        }
+
+        .scroll-cue__label--mobile {
+            display: none;
+        }
+
+        .mobile-section-intro {
+            display: none;
+        }
+
+        .itinerary {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 30px;
+            max-width: 88rem;
+            margin: 0 auto;
+        }
+
+        .itinerary-section {
+            position: relative;
+            background: var(--primary-navy);
+            color: rgba(255, 255, 255, 0.94);
+            padding: clamp(2.75rem, 6vw, 4.5rem) 1.5rem clamp(3rem, 7vw, 5rem);
+        }
+
+        .itinerary-section::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+        }
+
+        .itinerary-section__inner {
+            max-width: 94rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .itinerary__day {
+            position: relative;
+            padding: 0 clamp(1rem, 2vw, 1.8rem);
+        }
+
+        .itinerary__day + .itinerary__day::before {
+            content: '';
+            position: absolute;
+            top: 0.35rem;
+            bottom: 0.35rem;
+            left: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, var(--primary-gold), transparent);
+            box-shadow: 0 0 18px rgba(203, 167, 119, 0.18);
+        }
+
+        .itinerary__day-title {
+            margin: 0 0 0.7rem;
+            font-family: 'begum', serif;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--white);
+        }
+
+        .itinerary__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .itinerary__item {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .itinerary__time {
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatCue {
+            0%, 100% {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            50% {
+                transform: translateY(4px) rotate(45deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero__video-frame {
+                transform: translateX(-50%) scale(1.04);
+            }
+
+            .crest,
+            .title-lockup__placeholder,
+            .event-date,
+            .invite-body,
+            .invite-note,
+            .cta-button,
+            .scroll-cue,
+            .scroll-cue__arrow {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .scroll-cue {
+                margin-top: calc(1.2rem + 30px);
+            }
+
+            .scroll-cue__label--desktop {
+                display: none;
+            }
+
+            .scroll-cue__label--mobile {
+                display: inline;
+            }
+
+            .hero__content {
+                padding-top: 2rem;
+                padding-bottom: 2.5rem;
+            }
+
+            .invite-body__mobile-break {
+                display: none;
+            }
+
+            .itinerary-section {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .mobile-section-intro {
+                display: block;
+                max-width: 34rem;
+                margin: 0 auto 2.5rem;
+                font-size: 1rem;
+                line-height: 1.75;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .itinerary {
+                display: block;
+                max-width: 34rem;
+            }
+
+            .itinerary__day {
+                padding: 0;
+            }
+
+            .itinerary__day + .itinerary__day {
+                margin-top: 1.85rem;
+                padding-top: 1.85rem;
+            }
+
+            .itinerary__day + .itinerary__day::before {
+                position: static;
+                display: block;
+                width: 4.5rem;
+                height: 3px;
+                margin: 0 auto 1.85rem;
+                background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="hero" id="hero">
+        <div class="hero__bg" aria-hidden="true">
+            <div class="hero__video-shell">
+                <iframe
+                    id="hero-video"
+                    class="hero__video-frame"
+                    src="https://player.vimeo.com/video/1038714079?h=520fd3239a&background=1&autopause=0&dnt=1"
+                    title="Taymouth Castle atmospheric video background"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    loading="eager"
+                    tabindex="-1"
+                ></iframe>
+            </div>
+            <div class="hero__screen"></div>
+            <div class="hero__veil"></div>
+        </div>
+
+        <div class="hero__content">
+            <img
+                class="crest"
+                src="https://image.communications.discoverylandco.com/EloquaImages/clients/DiscoveryLandCompany/%7B719d0a36-0d00-47d5-b0ec-567c8bc73df4%7D_TAY_DIGITAL_GRADIENT_REV.png"
+                width="132"
+                height="auto"
+                alt="Taymouth Castle Golf &amp; Sport Club coat of arms"
+            >
+
+            <div class="title-lockup">
+                <!-- Final lockup: hide .title-lockup__placeholder and show .title-lockup__img with your asset path. -->
+                <h1 class="title-lockup__placeholder">Tee Off <span class="title-lockup__word title-lockup__word--at">at</span><br><span class="title-lockup__word title-lockup__word--taymouth">Taymouth</span> Castle</h1>
+                <!-- <img class="title-lockup__img" src="" alt="Tee Off at Taymouth Castle" style="display:block;margin:0 auto;"> -->
+            </div>
+
+            <p class="event-date">September 11-14, 2026</p>
+
+            <p class="invite-body">
+                Join us for an unforgettable weekend of golf at Taymouth Castle.<span class="invite-body__mobile-break"> You&rsquo;re invited to be part of the exclusive few to play the newly opened course at our inaugural tournament held in the Scottish countryside. Off the fairways, experience true rest and relaxation with tailored treatments and body therapies, as well as exceptional farm-to-table cuisine crafted for every palate.</span>
+            </p>
+
+            <p class="invite-note">Spaces are limited. To avoid disappointment, reserve your space today.</p>
+
+            <!-- TODO: RSVP URL -->
+            <a href="#" class="cta-button">RSVP</a>
+
+            <a href="#itinerary" class="scroll-cue" aria-label="Scroll down">
+                <span class="scroll-cue__label--desktop">Itinerary</span>
+                <span class="scroll-cue__label--mobile">Learn More</span>
+                <span class="scroll-cue__arrow" aria-hidden="true"></span>
+            </a>
+        </div>
+    </main>
+    <section class="itinerary-section" id="itinerary" aria-label="Itinerary">
+        <div class="itinerary-section__inner">
+            <p class="mobile-section-intro">
+                You&rsquo;re invited to be part of the exclusive few to play the newly opened course at our inaugural tournament held in the Scottish countryside. Off the fairways, experience true rest and relaxation with tailored treatments and body therapies, as well as exceptional farm-to-table cuisine crafted for every palate.
+            </p>
+
+            <div class="itinerary">
+                <section class="itinerary__day" aria-labelledby="day-one">
+                    <h2 class="itinerary__day-title" id="day-one">Day One</h2>
+                    <ul class="itinerary__list">
+                        <li class="itinerary__item">Arrivals</li>
+                        <li class="itinerary__item">Welcome Dinner and Party</li>
+                    </ul>
+                </section>
+
+                <section class="itinerary__day" aria-labelledby="day-two">
+                    <h2 class="itinerary__day-title" id="day-two">Day Two</h2>
+                    <ul class="itinerary__list">
+                        <li class="itinerary__item">Breakfast in the Tavern</li>
+                        <li class="itinerary__item">Wellness Offerings and Warm Up</li>
+                        <li class="itinerary__item">Golf Tournament Kick Off</li>
+                        <li class="itinerary__item">Cocktail Hour</li>
+                        <li class="itinerary__item">Highland Dinner Party</li>
+                        <li class="itinerary__item">Game Night</li>
+                    </ul>
+                </section>
+
+                <section class="itinerary__day" aria-labelledby="day-three">
+                    <h2 class="itinerary__day-title" id="day-three">Day Three</h2>
+                    <ul class="itinerary__list">
+                        <li class="itinerary__item">Breakfast in the Tavern</li>
+                        <li class="itinerary__item">Wellness Offerings and Warm Up</li>
+                        <li class="itinerary__item">Golf Tournament Continues</li>
+                        <li class="itinerary__item">Optional OP, Glenlyon, and Spa Activities</li>
+                        <li class="itinerary__item">Dinner and Awards Ceremony</li>
+                        <li class="itinerary__item">Farewell Party in the Drawing Room</li>
+                    </ul>
+                </section>
+
+                <section class="itinerary__day" aria-labelledby="day-four">
+                    <h2 class="itinerary__day-title" id="day-four">Day Four</h2>
+                    <ul class="itinerary__list">
+                        <li class="itinerary__item">Farewell Breakfast</li>
+                        <li class="itinerary__item">Departures</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        (function () {
+            var heroVideo = document.getElementById('hero-video');
+            if (!heroVideo || !window.Vimeo) return;
+
+            var segmentStart = 2;
+            var segmentEnd = 32;
+            var loopGuard = false;
+            var player = new Vimeo.Player(heroVideo);
+
+            function jumpToSegmentStart() {
+                if (loopGuard) return;
+
+                loopGuard = true;
+                player.setCurrentTime(segmentStart)
+                    .then(function () {
+                        return player.play();
+                    })
+                    .catch(function () {
+                        loopGuard = false;
+                    })
+                    .finally(function () {
+                        window.setTimeout(function () {
+                            loopGuard = false;
+                        }, 150);
+                    });
+            }
+
+            player.ready().then(function () {
+                jumpToSegmentStart();
+            }).catch(function () {
+                return;
+            });
+
+            player.on('play', function () {
+                player.getCurrentTime().then(function (seconds) {
+                    if (seconds < segmentStart - 0.25) {
+                        jumpToSegmentStart();
+                    }
+                }).catch(function () {
+                    return;
+                });
+            });
+
+            player.on('timeupdate', function (data) {
+                if (data.seconds >= segmentEnd) {
+                    jumpToSegmentStart();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -40,12 +40,16 @@ const portfolioData = {
       ],
     },
     {
-      title: "Garden Plot Selection Form",
-      kicker: "SILO RIDGE FIELD CLUB - AMENIA, NEW YORK",
-      media: ["./ASSETS/INTERACTIVE_SILO_1.png", "./ASSETS/INTERACTIVE_SILO_2.png"],
+      title: "Inaugural Scottish Golf Tournament",
+      kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
+      media: ["./ASSETS/INTERACTIVE_TAY_GOLF_1.png", "./ASSETS/INTERACTIVE_TAY_GOLF_2.png"],
+      link: {
+        href: "./ASSETS/TAY2317_GOLF_INVITATIONAL_051126.html",
+        label: "View Live Preview",
+      },
       paragraphs: [
-        "Silo Ridge, a family-oriented residential community, offers a comprehensive range of programs designed to engage families in enriching activities. Among these programs is their community garden, which aims to provide a customized experience tailored to the preferences of each participating family. To achieve this, Silo Ridge required the creation of an in-depth web form that would enable members to select the crops they wish to cultivate.",
-        "Utilizing Oracle's Eloqua, I designed a landing page that exudes a rustic and charming aesthetic while maintaining a clean and elegant appearance, thereby aligning with Silo Ridge's brand identity. For the form itself, the client requested the inclusion of several conditional options, which could only be implemented through custom scripts. I used Cursor to generate code that would seamlessly integrate into the Eloqua form.",
+        "Taymouth Castle Golf & Sport Club is preparing for its highly anticipated inaugural golf tournament, and the team wanted a digital invitation experience that lived as a custom HTML landing page. I saw an opportunity to use the medium itself to build anticipation and reflect the energy surrounding the occasion.",
+        "Using Cursor, I developed a fully custom webpage from the ground up. The client provided a cinematic reel of footage from the golf course, and I knew immediately that the video should serve as the focal point of the experience. The final design is minimal in form, but layered in execution - resulting in an experience that feels polished, elegant, and immersive.",
       ],
     },
   ],
@@ -78,12 +82,12 @@ const portfolioData = {
       ],
     },
     {
-      title: "Prospect Introduction",
-      kicker: "MOHALA - HONOLULU, HAWAII",
-      media: ["./ASSETS/EMAIL_MOHALA_1.png", "./ASSETS/EMAIL_MOHALA_2B.gif"],
+      title: "Real Estate Announcement",
+      kicker: "SILO RIDGE FIELD CLUB - AMENIA, NEW YORK",
+      media: ["./ASSETS/EMAIL_SILO_1.png", "./ASSETS/EMAIL_SILO_2.png"],
       paragraphs: [
-        "The initial interaction with potential clients must be captivating and welcoming. As a relatively new residential club, Mohala faced the challenge of establishing a strong first impression. However, with a location like Honolulu and a distinctive brand identity, I had ample opportunities to create a memorable introduction.",
-        "For this design, I prioritized the photography as the focal point, ensuring that the graphical brand elements complemented rather than detracted from the overall composition. Additionally, I had to navigate the constraints of Oracle's Eloqua builder, which pushed me to get extra creative with this layout.",
+        "This private residential club in New York had several exciting real estate opportunities on the horizon, and I was tasked with designing an email campaign that would resonate with a discerning audience of prospective buyers.",
+        "Drawing from Silo Ridge's dark, natural color palette, I created a refined visual tone that felt both modern and understated. To let the photography take center stage, I incorporated layered image treatments that added depth and dimension while maintaining responsiveness across devices. The final result is a clean, sophisticated design with a strong sense of luxury and presence.",
       ],
     },
     {
