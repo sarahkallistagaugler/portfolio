@@ -4,10 +4,14 @@ const portfolioData = {
       title: "Branding & Interface Design",
       kicker: "SONG SWEEPER",
       media: [
-        "./ASSETS/INTERACTIVE_SONGSWEEPER_1.png",
         "./ASSETS/INTERACTIVE_SONGSWEEPER_2.png",
+        "./ASSETS/INTERACTIVE_SONGSWEEPER_1.png",
         "./ASSETS/INTERACTIVE_SONGSWEEPER_3.png",
       ],
+      thumbnailPosition: "right center",
+      thumbnailOrigin: "center",
+      thumbnailScale: "1.1",
+      thumbnailHoverScale: "1.17",
       link: {
         href: "https://apps.apple.com/us/app/song-sweeper-library-cleaner/id6749875190",
         label: "View in App Store",
@@ -21,6 +25,8 @@ const portfolioData = {
       title: "Wonder Days Landing Page",
       kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
       media: ["./ASSETS/INTERACTIVE_TAYMOUTH_1.png", "./ASSETS/INTERACTIVE_TAYMOUTH_2.png"],
+      thumbnailMedia: "./ASSETS/INTERACTIVE_TAYMOUTH_2.png",
+      thumbnailPosition: "center top",
       link: {
         href: "./ASSETS/TAY2429_WONDER_DAYS_012726.html",
         label: "View Live Preview",
@@ -43,6 +49,8 @@ const portfolioData = {
       title: "Inaugural Scottish Golf Tournament",
       kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
       media: ["./ASSETS/INTERACTIVE_TAY_GOLF_1.png", "./ASSETS/INTERACTIVE_TAY_GOLF_2.png"],
+      thumbnailMedia: "./ASSETS/INTERACTIVE_TAY_GOLF_2.png",
+      thumbnailPosition: "center top",
       link: {
         href: "./ASSETS/TAY2317_GOLF_INVITATIONAL_051126.html",
         label: "View Live Preview",
@@ -55,18 +63,11 @@ const portfolioData = {
   ],
   emails: [
     {
-      title: "Prospect Introduction",
-      kicker: "COVE CLUB - CABO SAN LUCAS, MEXICO",
-      media: ["./ASSETS/EMAIL_COVE_1.png", "./ASSETS/EMAIL_COVE_2.png"],
-      paragraphs: [
-        "Residential clubs want their first point of contact with prospects to shine. They need to be eye-catching, engaging, and dialed in with the brand. For this project, it was my job to take the reins to showcase Cove Club in a quick, effective email campaign.",
-        "We started with a static mockup to get the design approved by the client, and then moved onto development. With the help of Cursor, an AI-powered IDE, I was able to generate an entirely custom HTML email based on the design mockup I created. The end result was a beautiful, responsive email that would catch the attention of prospects and inform them about the enticing real estate opportunities at Cove Club.",
-      ],
-    },
-    {
       title: "New Member Welcome",
       kicker: "DISCOVERY DUNES GOLF CLUB - DUBAI, UNITED ARAB EMIRATES",
       media: ["./ASSETS/EMAIL_DUNES_1.png", "./ASSETS/EMAIL_DUNES_2.png"],
+      thumbnailMedia: "./ASSETS/EMAIL_DUNES_2.png",
+      thumbnailPosition: "center -20px",
       paragraphs: [
         "Upon joining a club, new members may find it challenging to comprehend the necessary details for navigating their membership within the community. Our objective with this project was to create an aesthetically pleasing and informative email that exudes friendliness while conveying essential information.",
         "This email incorporates numerous graphical elements that must be responsive on both mobile and desktop devices. Utilizing Oracle's Eloqua email builder, I successfully achieved this responsiveness while ensuring that the client receives a final deliverable that can be edited in the future as they utilize it in their campaigns.",
@@ -76,6 +77,8 @@ const portfolioData = {
       title: "Site Preview Event Invite",
       kicker: "THE HILLS - THE HAMPTONS, NEW YORK",
       media: ["./ASSETS/EMAIL_HILLS_1.png", "./ASSETS/EMAIL_HILLS_2.gif"],
+      thumbnailMedia: "./ASSETS/EMAIL_HILLS_2.gif",
+      thumbnailPosition: "center -20px",
       paragraphs: [
         "The Hills is an exciting new residential community coming to The Hamptons, and my goal was to make this early preview event invite capture that energy. Simple, hand-drawn illustrations and a fun animation draws in recipients, earning their intrigue to read more.",
         "This email design was a welcome combination of illustrative work and type formatting. The hierarchy was important to make the details easy to follow, while also not becoming too stale that viewers click away. The final product is charming and cute, but still clean and sophisticated.",
@@ -85,6 +88,8 @@ const portfolioData = {
       title: "Real Estate Announcement",
       kicker: "SILO RIDGE FIELD CLUB - AMENIA, NEW YORK",
       media: ["./ASSETS/EMAIL_SILO_1.png", "./ASSETS/EMAIL_SILO_2.png"],
+      thumbnailMedia: "./ASSETS/EMAIL_SILO_2.png",
+      thumbnailPosition: "center top",
       paragraphs: [
         "This private residential club in New York had several exciting real estate opportunities on the horizon, and I was tasked with designing an email campaign that would resonate with a discerning audience of prospective buyers.",
         "Drawing from Silo Ridge's dark, natural color palette, I created a refined visual tone that felt both modern and understated. To let the photography take center stage, I incorporated layered image treatments that added depth and dimension while maintaining responsiveness across devices. The final result is a clean, sophisticated design with a strong sense of luxury and presence.",
@@ -94,18 +99,11 @@ const portfolioData = {
       title: "Golf Tournament Invite",
       kicker: "ZAPOTAL GOLF & BEACH CLUB - GUANACASTE, COSTA RICA",
       media: ["./ASSETS/EMAIL_ZAPOTAL_1.png", "./ASSETS/EMAIL_ZAPOTAL_2.png"],
+      thumbnailMedia: "./ASSETS/EMAIL_ZAPOTAL_2.png",
+      thumbnailPosition: "center top",
       paragraphs: [
         "Zapotal Golf & Beach Club is hosting their first golf tournament, and they wanted this email invitation to feel particularly special. This email needed to feel at home among the suite of event collateral that my team had worked on.",
         "Without sacrificing responsiveness across devices, I pulled in the vibrant watercolor illustrations that catch the viewers eye right at the top. I continued the colorful theme into the schedule below, and finished the last section with a callback to the foliage. This project was a really interesting balance between highlighting the event creative while also making a functional, responsive email that would both engage and inform its viewers.",
-      ],
-    },
-    {
-      title: "Prospect Introduction",
-      kicker: "TERRITORY 1889 GOLF & LAKE CLUB - FLATHEAD LAKE, MONTANA",
-      media: ["./ASSETS/EMAIL_TERRITORY_1.png", "./ASSETS/EMAIL_TERRITORY_2.png"],
-      paragraphs: [
-        "Territory 1889's brand embodies a harmonious blend of rustic charm and opulent luxury. In crafting this introductory email to prospective buyers, I endeavored to convey this essence while adhering to the constraints of Oracle's Eloqua email builder.",
-        "Territory 1889's photography speaks for itself, necessitating its prominent placement within the layout. To achieve a rugged aesthetic without compromising responsiveness in my email design, I incorporated paper-textured background images that are subtle enough to not detract from the captivating photography. The torn edges and rough lines further enhance the rustic ambiance, distinguishing Territory 1889 as a distinctive residential experience.",
       ],
     },
   ],
@@ -190,7 +188,20 @@ function renderCards() {
               <p class="project-card__label-title">${project.title}</p>
               <p class="project-card__label-kicker">${project.kicker}</p>
             </div>
-            <img class="project-card__media" src="${project.media[0]}" alt="${project.title} preview image" loading="lazy" />
+            <img
+              class="project-card__media"
+              src="${project.thumbnailMedia || project.media[0]}"
+              alt="${project.title} preview image"
+              loading="lazy"
+              style="${[
+                project.thumbnailPosition ? `object-position: ${project.thumbnailPosition}` : "",
+                project.thumbnailOrigin ? `--thumbnail-origin: ${project.thumbnailOrigin}` : "",
+                project.thumbnailScale ? `--thumbnail-scale: ${project.thumbnailScale}` : "",
+                project.thumbnailHoverScale ? `--thumbnail-hover-scale: ${project.thumbnailHoverScale}` : "",
+              ]
+                .filter(Boolean)
+                .join("; ")}"
+            />
           </article>
         `
       )

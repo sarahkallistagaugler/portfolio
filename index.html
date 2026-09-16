@@ -22,10 +22,10 @@
           Return to Top
         </a>
         <nav id="site-nav" class="top-nav__links" aria-label="Primary">
+          <a href="#about">About</a>
           <a href="#interactive">Interactive</a>
           <a href="#emails">Emails</a>
           <a href="#type-layout">Type &amp; Layout</a>
-          <a href="#about">About</a>
         </nav>
       </div>
     </header>
@@ -34,37 +34,41 @@
       <section id="home" class="hero">
         <img src="./ASSETS/SKG_BANNER.png" alt="SKG Logo" class="hero__logo" />
         <h1 class="hero__title">Sarah Gaugler</h1>
-        <nav class="hero__links" aria-label="Section quick links">
-          <a href="#interactive">Interactive Design</a>
-          <a href="#emails">Email Design</a>
-          <a href="#type-layout">Typesetting &amp; Layout Design</a>
-          <span class="hero__divider" aria-hidden="true"></span>
-          <a href="#about">More About Me</a>
+        <p class="hero__intro">
+          Blending visual craft, technical execution, and AI-assisted creative workflows
+        </p>
+        <nav class="hero__preview-strip" aria-label="Featured portfolio sections">
+          <a class="hero__preview-tile" href="#interactive" aria-label="View Interactive Design work">
+            <img
+              class="hero__preview-image hero__preview-image--song-sweeper"
+              src="./ASSETS/INTERACTIVE_SONGSWEEPER_2.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="hero__preview-label">Interactive Design</span>
+          </a>
+          <a class="hero__preview-tile" href="#emails" aria-label="View Email Design work">
+            <img
+              class="hero__preview-image"
+              src="./ASSETS/EMAIL_SILO_2.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="hero__preview-label">Email Design</span>
+          </a>
+          <a class="hero__preview-tile" href="#type-layout" aria-label="View Typesetting and Layout Design work">
+            <img
+              class="hero__preview-image"
+              src="./ASSETS/LAYOUT_TAYMOUTH.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="hero__preview-label">Type &amp; Layout</span>
+          </a>
         </nav>
-        <a class="hero__scroll" href="#interactive" aria-label="Scroll to projects">
+        <a class="hero__scroll" href="#about" aria-label="Scroll to about section">
           <span class="hero__scroll-icon" aria-hidden="true"></span>
         </a>
-      </section>
-
-      <section id="interactive" class="portfolio-section">
-        <div class="content-shell">
-          <h2 class="section-title">Interactive Design</h2>
-          <div id="interactive-grid" class="project-grid" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section id="emails" class="portfolio-section">
-        <div class="content-shell">
-          <h2 class="section-title">Email Design</h2>
-          <div id="emails-grid" class="project-grid" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section id="type-layout" class="portfolio-section">
-        <div class="content-shell">
-          <h2 class="section-title">Typesetting &amp; Layout Design</h2>
-          <div id="layout-grid" class="project-grid" aria-live="polite"></div>
-        </div>
       </section>
 
       <section id="about" class="about-section">
@@ -120,6 +124,27 @@
               </div>
             </aside>
           </div>
+        </div>
+      </section>
+
+      <section id="interactive" class="portfolio-section">
+        <div class="content-shell">
+          <h2 class="section-title">Interactive Design</h2>
+          <div id="interactive-grid" class="project-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="emails" class="portfolio-section">
+        <div class="content-shell">
+          <h2 class="section-title">Email Design</h2>
+          <div id="emails-grid" class="project-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="type-layout" class="portfolio-section">
+        <div class="content-shell">
+          <h2 class="section-title">Typesetting &amp; Layout Design</h2>
+          <div id="layout-grid" class="project-grid" aria-live="polite"></div>
         </div>
       </section>
 
