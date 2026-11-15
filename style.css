@@ -721,6 +721,7 @@ body.is-ready .hero__scroll {
 .project-modal__media {
   width: 100%;
   height: auto;
+  display: block;
   object-fit: cover;
   margin: 0 auto;
 }
@@ -793,6 +794,7 @@ body.is-ready .hero__scroll {
 .project-modal__secondary-image {
   width: 100%;
   height: auto;
+  display: block;
   object-fit: cover;
 }
 

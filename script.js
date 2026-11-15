@@ -4,9 +4,9 @@ const portfolioData = {
       title: "Branding & Interface Design",
       kicker: "SONG SWEEPER",
       media: [
-        "./ASSETS/INTERACTIVE_SONGSWEEPER_2.png",
-        "./ASSETS/INTERACTIVE_SONGSWEEPER_1.png",
-        "./ASSETS/INTERACTIVE_SONGSWEEPER_3.png",
+        "./ASSETS/INTERACTIVE_SONGSWEEPER_2.webp",
+        "./ASSETS/INTERACTIVE_SONGSWEEPER_1.webp",
+        "./ASSETS/INTERACTIVE_SONGSWEEPER_3.webp",
       ],
       thumbnailPosition: "right center",
       thumbnailOrigin: "center",
@@ -24,8 +24,8 @@ const portfolioData = {
     {
       title: "Wonder Days Landing Page",
       kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
-      media: ["./ASSETS/INTERACTIVE_TAYMOUTH_1.png", "./ASSETS/INTERACTIVE_TAYMOUTH_2.png"],
-      thumbnailMedia: "./ASSETS/INTERACTIVE_TAYMOUTH_2.png",
+      media: ["./ASSETS/INTERACTIVE_TAYMOUTH_1.webp", "./ASSETS/INTERACTIVE_TAYMOUTH_2.webp"],
+      thumbnailMedia: "./ASSETS/INTERACTIVE_TAYMOUTH_2.webp",
       thumbnailPosition: "center top",
       link: {
         href: "./ASSETS/TAY2429_WONDER_DAYS_012726.html",
@@ -39,7 +39,7 @@ const portfolioData = {
     {
       title: "OS&E Interactive Catalog",
       kicker: "DISCOVERY LAND COMPANY",
-      media: ["./ASSETS/INTERACTIVE_OSE.png"],
+      media: ["./ASSETS/INTERACTIVE_OSE.webp"],
       paragraphs: [
         "This project presented a distinct functional challenge. The client required a visually appealing and user-friendly PDF catalog that homeowners could navigate and complete independently. Additionally, the form necessitated a feature that would provide recommended quantities based on the information provided about their homes. For instance, if homeowners specify the number of queen beds, the catalog would suggest the appropriate quantity of queen mattress pads to purchase.",
         "To accomplish this, I programmed the form fields in Adobe Acrobat using equations that would generate quantity suggestions for each item. The layout of this catalog was designed to be simple and intuitive, ensuring ease of navigation. Furthermore, brand elements were incorporated to convey the official nature of the document from Discovery Land Company. The final product is both visually captivating for residents and functionally proficient for the furnishing team.",
@@ -48,8 +48,8 @@ const portfolioData = {
     {
       title: "Inaugural Scottish Golf Tournament",
       kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
-      media: ["./ASSETS/INTERACTIVE_TAY_GOLF_1.png", "./ASSETS/INTERACTIVE_TAY_GOLF_2.png"],
-      thumbnailMedia: "./ASSETS/INTERACTIVE_TAY_GOLF_2.png",
+      media: ["./ASSETS/INTERACTIVE_TAY_GOLF_1.webp", "./ASSETS/INTERACTIVE_TAY_GOLF_2.webp"],
+      thumbnailMedia: "./ASSETS/INTERACTIVE_TAY_GOLF_2.webp",
       thumbnailPosition: "center top",
       link: {
         href: "./ASSETS/TAY2317_GOLF_INVITATIONAL_051126.html",
@@ -65,8 +65,8 @@ const portfolioData = {
     {
       title: "New Member Welcome",
       kicker: "DISCOVERY DUNES GOLF CLUB - DUBAI, UNITED ARAB EMIRATES",
-      media: ["./ASSETS/EMAIL_DUNES_1.png", "./ASSETS/EMAIL_DUNES_2.png"],
-      thumbnailMedia: "./ASSETS/EMAIL_DUNES_2.png",
+      media: ["./ASSETS/EMAIL_DUNES_1.webp", "./ASSETS/EMAIL_DUNES_2.webp"],
+      thumbnailMedia: "./ASSETS/EMAIL_DUNES_2.webp",
       thumbnailPosition: "center -20px",
       paragraphs: [
         "Upon joining a club, new members may find it challenging to comprehend the necessary details for navigating their membership within the community. Our objective with this project was to create an aesthetically pleasing and informative email that exudes friendliness while conveying essential information.",
@@ -76,8 +76,8 @@ const portfolioData = {
     {
       title: "Site Preview Event Invite",
       kicker: "THE HILLS - THE HAMPTONS, NEW YORK",
-      media: ["./ASSETS/EMAIL_HILLS_1.png", "./ASSETS/EMAIL_HILLS_2.gif"],
-      thumbnailMedia: "./ASSETS/EMAIL_HILLS_2.gif",
+      media: ["./ASSETS/EMAIL_HILLS_1.webp", "./ASSETS/EMAIL_HILLS_2.webm"],
+      thumbnailMedia: "./ASSETS/EMAIL_HILLS_2.webp",
       thumbnailPosition: "center -20px",
       paragraphs: [
         "The Hills is an exciting new residential community coming to The Hamptons, and my goal was to make this early preview event invite capture that energy. Simple, hand-drawn illustrations and a fun animation draws in recipients, earning their intrigue to read more.",
@@ -87,8 +87,8 @@ const portfolioData = {
     {
       title: "Real Estate Announcement",
       kicker: "SILO RIDGE FIELD CLUB - AMENIA, NEW YORK",
-      media: ["./ASSETS/EMAIL_SILO_1.png", "./ASSETS/EMAIL_SILO_2.png"],
-      thumbnailMedia: "./ASSETS/EMAIL_SILO_2.png",
+      media: ["./ASSETS/EMAIL_SILO_1.webp", "./ASSETS/EMAIL_SILO_2.webp"],
+      thumbnailMedia: "./ASSETS/EMAIL_SILO_2.webp",
       thumbnailPosition: "center top",
       paragraphs: [
         "This private residential club in New York had several exciting real estate opportunities on the horizon, and I was tasked with designing an email campaign that would resonate with a discerning audience of prospective buyers.",
@@ -98,8 +98,8 @@ const portfolioData = {
     {
       title: "Golf Tournament Invite",
       kicker: "ZAPOTAL GOLF & BEACH CLUB - GUANACASTE, COSTA RICA",
-      media: ["./ASSETS/EMAIL_ZAPOTAL_1.png", "./ASSETS/EMAIL_ZAPOTAL_2.png"],
-      thumbnailMedia: "./ASSETS/EMAIL_ZAPOTAL_2.png",
+      media: ["./ASSETS/EMAIL_ZAPOTAL_1.webp", "./ASSETS/EMAIL_ZAPOTAL_2.webp"],
+      thumbnailMedia: "./ASSETS/EMAIL_ZAPOTAL_2.webp",
       thumbnailPosition: "center top",
       paragraphs: [
         "Zapotal Golf & Beach Club is hosting their first golf tournament, and they wanted this email invitation to feel particularly special. This email needed to feel at home among the suite of event collateral that my team had worked on.",
@@ -111,7 +111,7 @@ const portfolioData = {
     {
       title: "Survey Results Presentation",
       kicker: "COVE CLUB - CABO SAN LUCAS, MEXICO",
-      media: ["./ASSETS/LAYOUT_COVE.png"],
+      media: ["./ASSETS/LAYOUT_COVE.webp"],
       paragraphs: [
         "As operations intensified at this exclusive residential club in Cabo, the teams gained valuable insights into enhancing the overall experience for all members. They conducted a comprehensive survey and sought assistance in presenting the findings in a concise and visually appealing slide deck. The data needed to be prominently displayed on each slide, complemented by accompanying graphics to provide additional visual context.",
       ],
@@ -119,7 +119,7 @@ const portfolioData = {
     {
       title: "Highland Adventure Guide",
       kicker: "TAYMOUTH CASTLE GOLF & SPORT CLUB - SCOTLAND",
-      media: ["./ASSETS/LAYOUT_TAYMOUTH.png"],
+      media: ["./ASSETS/LAYOUT_TAYMOUTH.webp"],
       paragraphs: [
         "The Adventure Guide provides readers with an overview of the vibrant community that awaits them. This publication seamlessly combines engaging visuals with the refined aesthetic of the Taymouth Castle brand, resulting in a comprehensive and visually appealing booklet. A well-organized layout ensured a cohesive reading experience, while the visual elements effectively conveyed the essence of the community.",
       ],
@@ -127,7 +127,7 @@ const portfolioData = {
     {
       title: "Investor Report Template",
       kicker: "AUSTIN SURF CLUB - AUSTIN, TEXAS",
-      media: ["./ASSETS/LAYOUT_AUSTIN.png"],
+      media: ["./ASSETS/LAYOUT_AUSTIN.webp"],
       paragraphs: [
         "Investor reports could be boring - but not on my watch. Typography layouts are a particular favorite of mine, as they allow me to immerse myself in a state of creative flow. Austin Surf Club's branding is characterized by its boldness and elevation, which enhances the impact of the typography. Highlighted photography effectively breaks up the extensive text sections, while the well-organized tables present the pertinent data without detracting from the overall aesthetic. The meticulous attention to paragraph formatting simplifies the overall layout, making it efficient and user-friendly, especially when preparing for the next quarter's report.",
       ],
@@ -135,7 +135,7 @@ const portfolioData = {
     {
       title: "Folded Trail Map",
       kicker: "YELLOWSTONE CLUB - BIG SKY, MONTANA",
-      media: ["./ASSETS/LAYOUT_YELLOWSTONE.png"],
+      media: ["./ASSETS/LAYOUT_YELLOWSTONE.webp"],
       paragraphs: [
         "This beautiful watercolor map art was created by a talented artist. My responsibility was to label the trails in a manner that harmonizes with the artwork while ensuring its accessibility. Readability was the primary consideration in this design, employing simplicity to allow the watercolor art to dominate the aesthetic aspects. It was crucial to maintain the alignment of the type and consistency in the labels.",
       ],
@@ -149,8 +149,27 @@ const gridMap = {
   layout: document.querySelector("#layout-grid"),
 };
 
+function isVideoPath(path) {
+  return /\.(webm|mp4)$/i.test(path || "");
+}
+
+function mediaMarkup(path, className, alt, { lazy = false, id = "" } = {}) {
+  const idAttr = id ? ` id="${id}"` : "";
+  if (isVideoPath(path)) {
+    const webm = path.replace(/\.mp4$/i, ".webm");
+    const mp4 = path.replace(/\.webm$/i, ".mp4");
+    const preload = lazy ? "none" : "metadata";
+    return `<video${idAttr} class="${className}" autoplay muted loop playsinline preload="${preload}" aria-label="${alt}">
+      <source src="${webm}" type="video/webm" />
+      <source src="${mp4}" type="video/mp4" />
+    </video>`;
+  }
+  const lazyAttr = lazy ? ' loading="lazy"' : "";
+  return `<img${idAttr} class="${className}" src="${path}" alt="${alt}"${lazyAttr} />`;
+}
+
 const modalEl = document.querySelector("#project-modal");
-const modalImageEl = document.querySelector("#modal-image");
+const modalMediaWrapEl = document.querySelector(".project-modal__media-wrap");
 const modalKickerEl = document.querySelector("#modal-kicker");
 const modalTitleEl = document.querySelector("#modal-title");
 const modalBodyEl = document.querySelector("#modal-body");
@@ -213,8 +232,12 @@ function renderModal() {
   const project = portfolioData[modalState.section][modalState.projectIndex];
   const [primaryMedia, ...secondaryMedia] = project.media;
 
-  modalImageEl.src = primaryMedia;
-  modalImageEl.alt = `${project.title} primary image`;
+  modalMediaWrapEl.innerHTML = mediaMarkup(
+    primaryMedia,
+    "project-modal__media",
+    `${project.title} primary image`,
+    { id: "modal-image" }
+  );
   modalTitleEl.textContent = project.title;
   modalKickerEl.textContent = project.kicker;
   modalBodyEl.innerHTML = project.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
@@ -233,17 +256,18 @@ function renderModal() {
     .map(
       (mediaPath, index) => `
         <div class="project-modal__secondary-image-wrap">
-          <img
-            class="project-modal__secondary-image"
-            src="${mediaPath}"
-            alt="${project.title} supporting image ${index + 2}"
-            loading="lazy"
-          />
+          ${mediaMarkup(
+            mediaPath,
+            "project-modal__secondary-image",
+            `${project.title} supporting image ${index + 2}`,
+            { lazy: !isVideoPath(mediaPath) }
+          )}
         </div>
       `
     )
     .join("");
 
+  playModalVideos();
   requestAnimationFrame(updateScrollHint);
 }
 
@@ -259,13 +283,33 @@ function openModal(section, projectIndex) {
 function closeModal() {
   modalEl.classList.remove("is-open");
   document.body.classList.remove("modal-open");
+  modalEl.querySelectorAll("video").forEach((video) => {
+    video.pause();
+    video.currentTime = 0;
+  });
   if (modalScrollHintEl) {
     modalScrollHintEl.classList.remove("is-visible");
   }
 }
 
+function getModalMediaEl() {
+  return modalMediaWrapEl?.querySelector(".project-modal__media");
+}
+
+function playModalVideos() {
+  modalEl.querySelectorAll("video").forEach((video) => {
+    const attempt = () => {
+      video.muted = true;
+      const play = video.play();
+      if (play && typeof play.catch === "function") play.catch(() => {});
+    };
+    if (video.readyState >= 2) attempt();
+    else video.addEventListener("loadeddata", attempt, { once: true });
+  });
+}
+
 function updateScrollHint() {
-  if (!modalScrollHintEl || !modalPanelEl || !modalImageEl) return;
+  if (!modalScrollHintEl || !modalPanelEl || !getModalMediaEl()) return;
   if (!modalEl.classList.contains("is-open")) return;
   if (window.innerWidth <= 900) {
     modalScrollHintEl.classList.remove("is-visible");
@@ -281,7 +325,7 @@ function updateScrollHint() {
   ]);
   const isEligibleProject = project && eligibleTitles.has(project.title);
   const panelHeight = modalPanelEl.clientHeight;
-  const imageHeight = modalImageEl.getBoundingClientRect().height;
+  const imageHeight = getModalMediaEl().getBoundingClientRect().height;
   const tallImage = imageHeight >= panelHeight - 120;
   const scrolled = modalPanelEl.scrollTop > 40;
 
@@ -292,7 +336,7 @@ function updateScrollHint() {
   }
 }
 function animateProjectSwap(delta, updateCallback) {
-  const targets = [modalImageEl, modalSecondaryMediaEl, modalTitleEl, modalKickerEl, modalBodyEl];
+  const targets = [modalMediaWrapEl, modalSecondaryMediaEl, modalTitleEl, modalKickerEl, modalBodyEl];
   const direction = delta >= 0 ? 1 : -1;
   const outX = -direction * 34;
   const inX = direction * 34;
@@ -413,4 +457,6 @@ if (modalPanelEl) {
 }
 
 window.addEventListener("resize", updateScrollHint);
-modalImageEl.addEventListener("load", updateScrollHint);
+modalMediaWrapEl.addEventListener("load", updateScrollHint, true);
+modalMediaWrapEl.addEventListener("loadeddata", updateScrollHint, true);
+modalSecondaryMediaEl.addEventListener("loadeddata", updateScrollHint, true);
