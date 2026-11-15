@@ -207,6 +207,19 @@ a {
   line-height: 1.55;
 }
 
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: -30px;
+}
+
+.hero__actions .button {
+  white-space: nowrap;
+}
+
 .hero__preview-strip {
   width: min(1240px, calc(100% - 1.5rem));
   display: grid;
@@ -375,6 +388,7 @@ a {
 .hero__title,
 .hero__role,
 .hero__intro,
+.hero__actions,
 .hero__preview-tile {
   opacity: 0;
 }
@@ -428,8 +442,17 @@ body.is-ready .hero__role {
   transform: translateY(26px) scale(0.98);
 }
 
+.hero__actions {
+  transform: translateY(26px) scale(0.98);
+}
+
 body.is-ready .hero__intro {
   animation: heroLinkIn 0.5s cubic-bezier(0.2, 0.9, 0.2, 1.02) forwards;
+}
+
+body.is-ready .hero__actions {
+  animation: heroLinkIn 0.5s cubic-bezier(0.2, 0.9, 0.2, 1.02) forwards;
+  animation-delay: 0.3s;
 }
 
 body.is-ready .hero__preview-tile {
@@ -979,6 +1002,7 @@ body.modal-open {
   .hero__title,
   .hero__role,
   .hero__intro,
+  .hero__actions,
   .hero__preview-tile {
     opacity: 1 !important;
     transform: none !important;
