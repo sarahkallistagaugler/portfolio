@@ -580,8 +580,12 @@ body.is-ready .hero__scroll {
 
 .about-buttons {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
   gap: 0.8rem;
+}
+
+.about-buttons .button {
+  white-space: nowrap;
 }
 
 .button {
@@ -874,6 +878,11 @@ body.modal-open {
   }
 
   .top-nav__links {
+    margin-left: 0;
+    gap: 1.25rem;
+  }
+
+  .top-nav__links a:not(.top-nav__resume) {
     display: none;
   }
 
