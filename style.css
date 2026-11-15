@@ -161,6 +161,11 @@ a {
 }
 
 .hero {
+  --hero-preview-max: 1240px;
+  --hero-preview-inset: 1.5rem;
+  --hero-preview-gap: 1.35rem;
+  --hero-preview-strip: min(var(--hero-preview-max), calc(100% - var(--hero-preview-inset)));
+  --hero-preview-tile: calc((var(--hero-preview-strip) - 2 * var(--hero-preview-gap)) / 3);
   position: relative;
   min-height: 100vh;
   padding: 0 1rem 3.5rem;
@@ -210,14 +215,14 @@ a {
 .hero__actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: max-content;
+  width: var(--hero-preview-tile);
   max-width: 100%;
   justify-content: center;
   align-items: stretch;
   gap: 1.2rem;
   margin: -30px auto 0;
-  padding-top: 1.05rem;
-  padding-bottom: 1.05rem;
+  padding-top: 2.05rem;
+  padding-bottom: 2.05rem;
 }
 
 .hero__actions .button {
@@ -234,10 +239,10 @@ a {
 }
 
 .hero__preview-strip {
-  width: min(1240px, calc(100% - 1.5rem));
+  width: var(--hero-preview-strip);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.35rem;
+  gap: var(--hero-preview-gap);
 }
 
 .hero__preview-tile {
@@ -904,6 +909,9 @@ body.modal-open {
   .hero {
     min-height: auto;
     padding: 5.5rem 1rem 3rem;
+    --hero-preview-max: 560px;
+    --hero-preview-inset: 1rem;
+    --hero-preview-tile: var(--hero-preview-strip);
   }
 
   .hero__intro {
@@ -916,7 +924,6 @@ body.modal-open {
 
   .hero__preview-strip {
     grid-template-columns: 1fr;
-    width: min(560px, calc(100% - 1rem));
   }
 
   .hero__preview-label {
