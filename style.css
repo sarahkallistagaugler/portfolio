@@ -886,6 +886,12 @@ body.modal-open {
     display: none;
   }
 
+  .top-nav__resume {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
   .top-nav__return {
     display: inline-flex;
     align-items: center;
